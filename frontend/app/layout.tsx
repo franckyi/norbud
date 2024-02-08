@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
 import Hero from "./ui/hero";
-import getData from "./lib/getData";
-import { companyInfoRequest } from "./data/company-info-request";
 
 const archivo = Archivo({ subsets: ["latin-ext"] });
 
@@ -15,13 +13,10 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  let data = await getData(companyInfoRequest.URL);
-  let aboutUsHeading = data.acf.aboutUsHeading;
-
   return (
     <html lang="pl">
       <body className={archivo.className}>
-        <Hero aboutUsHeading={aboutUsHeading} bg={"bg-hero-1"} />
+        <Hero bg={"bg-hero-1"} />
         <main>{children}</main>
         <footer>@ 2024 Norbud. All rights reserved.</footer>
       </body>

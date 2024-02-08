@@ -1,9 +1,14 @@
 import AppBar from "./app-bar";
 import { HeroProps } from "../types/hero-props";
+import getData from "../lib/getData";
+import { companyInfoRequest } from "../data/company-info-request";
 
 const heroClasses = "min-h-screen w-full bg-no-repeat bg-cover";
 
-function Hero({ aboutUsHeading, bg }: HeroProps) {
+async function Hero({ bg }: HeroProps) {
+  let data = await getData(companyInfoRequest.URL);
+  let aboutUsHeading = data.acf.aboutUsHeading;
+
   return (
     <header className={heroClasses + " " + bg}>
       <AppBar />
