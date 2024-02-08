@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import AppBar from "./ui/app-bar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +16,9 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={inter.className}>
-        <header>
-          <nav></nav>
-        </header>
+        <AppBar />
         <main>{children}</main>
-        <footer></footer>
+        <footer>@ 2024 Norbud. All rights reserved.</footer>
       </body>
     </html>
   );
