@@ -7,10 +7,22 @@ async function Home() {
   let data = await getData(companyInfoRequest.URL);
   data = data.acf;
 
+  let whyUsList: object[] = [
+    data.whyUsGroup1,
+    data.whyUsGroup2,
+    data.whyUsGroup3,
+    data.whyUsGroup4,
+  ];
+  console.log("whyUsList", whyUsList);
+
   return (
     <>
       <AboutUs aboutUsText={data.aboutUsText} />
-      <WhyUs whyUsHeading={data.whyUsHeading} whyUsList={data.whyUsList} whyUsFinalText={data.whyUsFinalText} />
+      <WhyUs
+        whyUsHeading={data.whyUsHeading}
+        whyUsList={data.whyUsList}
+        whyUsFinalText={data.whyUsFinalText}
+      />
       <p>test 2</p>
     </>
   );
