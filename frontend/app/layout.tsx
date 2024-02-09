@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
 import Hero from "./ui/hero";
+import Footer from "./Footer";
 
 const archivo = Archivo({ subsets: ["latin-ext"] });
 
@@ -18,7 +19,7 @@ export default async function RootLayout({
       <body className={archivo.className}>
         <Hero bg={"bg-hero-1"} />
         <main>{children}</main>
-        <footer>@ 2024 Norbud. All rights reserved.</footer>
+        <Footer />
       </body>
     </html>
   );
