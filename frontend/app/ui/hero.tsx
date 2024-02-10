@@ -5,9 +5,7 @@ import { companyInfoRequest } from "../data/company-info-request";
 import FadingHeadline from "./FadingHeadline/FadingHeadline";
 
 const heroClasses = "min-h-screen w-full bg-no-repeat bg-cover";
-
 const words = ["Innowacyjność", "Doświadczenie", "Nowoczesność"];
-
 
 async function Hero({ bg }: HeroProps) {
   let data = await getData(companyInfoRequest.URL);
