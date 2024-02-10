@@ -2,11 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./FadingHeadline.css";
 import { tektur } from "../fonts";
-
-interface FadingHeadlineProps {
-  words: string[];
-  interval?: number;
-}
+import { FadingHeadlineProps } from "@/app/types/fading-headline-props";
 
 const FadingHeadline: React.FC<FadingHeadlineProps> = ({
   words,
