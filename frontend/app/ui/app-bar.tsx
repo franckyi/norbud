@@ -1,9 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+
 import { NAV_LINKS } from "../data/nav-links";
 
 export default function AppBar() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   return (
     <div className="flex justify-center gap-8 top-0 lg:top-8 z-50 lg:pt-8 lg:ml-80">
       <Image
@@ -19,13 +23,22 @@ export default function AppBar() {
         aria-label="Global"
         style={{ height: "100%" }}
       >
-        {NAV_LINKS.map(({ href, label }) => (
-          <Link
-            key={label}
-            href={href}
-            className="border-solid border-b-4 border-green-700 hover:border-red-700"
-          >
-            {label}
+        {NAV_LINKS.map(({ href, label }, index) => (
+          <Link key={label} href={href}>
+            <div className="relative">
+              <div
+                className={`absolute inset-x-0 bottom-0 border-b-4 border-transparent transition-all duration-300 ${
+                  hoveredIndex === index ? "w-full border-red-700" : "w-0 border-green-700"
+                }`}
+              />
+              <div
+                className="relative z-10"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {label}
+              </div>
+            </div>
           </Link>
         ))}
       </nav>
