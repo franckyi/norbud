@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Hero from "./ui/hero";
 import { archivo } from "./ui/fonts";
+import Footer from "./ui/footer";
 
 export const metadata: Metadata = {
   title: "NOR-BUD od 2021 r. Zmieniamy Polskę",
@@ -16,7 +17,7 @@ export default async function RootLayout({
       <body className={archivo.className}>
         <Hero bg={"bg-hero-1"} />
         <main>{children}</main>
-        <footer>@ 2024 Norbud. All rights reserved.</footer>
+        <Footer />
       </body>
     </html>
   );
