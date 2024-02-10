@@ -1,12 +1,12 @@
 function Oferta({ ofertaList }: { ofertaList: string[] }) {
   return (
     <>
-      <h2 className="my-16 text-center text-2xl font-extrabold uppercase">
+      <h2 className="mt-16 mb-8 text-center text-2xl font-extrabold uppercase">
         Oferta
       </h2>
       <section
         id="oferta"
-        className="mb-8 p-8 px-96 mx-auto text-center bg-stone-200"
+        className="px-96 mx-auto text-center"
       >
         <div className="w-3/3 mx-auto flex flex-wrap gap-4 justify-center text-center">
           {ofertaList.map((oferta) => (
