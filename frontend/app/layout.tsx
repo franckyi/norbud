@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
 import Hero from "./ui/hero";
-import Footer from "./Footer";
+import Footer from "./ui/footer";
 
 const archivo = Archivo({ subsets: ["latin-ext"] });
 
