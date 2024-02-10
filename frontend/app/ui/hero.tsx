@@ -12,10 +12,11 @@ let isHome = null;
 function Hero({ heading }: HeroProps) {
   const pathName = usePathname();
   isHome = pathName === "/" ? true : false;
+
   let heroClasses: string | null = null;
   heroClasses = isHome
     ? "bg-hero-1 bg-cover min-h-screen"
-    : "bg-hero-short min-h-80";
+    : "bg-hero-short bg-cover min-h-80";
 
   return (
     <header className={baseClasses + " " + heroClasses}>
