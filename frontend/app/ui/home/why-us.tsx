@@ -1,22 +1,23 @@
 import { WhyUsProps } from "@/app/types/why-us-props";
 
 async function WhyUs({ whyUsHeading, whyUsList, whyUsFinalText }: WhyUsProps) {
+  console.log(whyUsList);
   return (
-    <section id="about-us" className="w-1/3 mx-auto my-16 text-center">
+    <section id="about-us" className="w-3/4 mx-auto text-center">
       <h2 className="my-8 text-2xl font-extrabold uppercase">{whyUsHeading}</h2>
-
-      {/* "whyUsGroup1": {
-            "heading": "Innowacyjność Od Początku Działalności",
-            "desc": "Pomimo młodego wieku firmy, inwestujemy w nowoczesny sprzęt, który staje się coraz bardziej zaawansowany. To nasza odpowiedź na wyzwania współczesnego budownictwa."
-        }, */}
-
-      {/* {whyUsList.map((obj, index) => (
-        <div key={obj.heading}>
-          <span>{index}</span>
-          <p>{obj.desc}</p>
-        </div>
-      ))} */}
-
+      <div className="flex w-full gap-4 mx-8 my-16 text-center">
+        {whyUsList.map((obj) => {
+          return (
+            <article
+              className="flex flex-col w-1/4 p-8 text-left border border-1 border-solid border-stone-900 hover:bg-stone-200"
+              key={obj.id}
+            >
+              <h3 className="mb-8 text-2xl font-bold">{obj.heading}</h3>
+              <p className="">{obj.desc}</p>
+            </article>
+          );
+        })}
+      </div>
       <p>{whyUsFinalText}</p>
     </section>
   );
