@@ -1,0 +1,17 @@
+.fading-text span {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fading-text span.visible {
+    opacity: 1;
+}
+
+.fading-text span.hidden {
+    display: none;
+}
+
+span {
+    font-size: 8rem;
+    font-weight: bold;
+}
