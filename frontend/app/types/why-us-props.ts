@@ -1,5 +1,5 @@
 export type WhyUsProps = {
   whyUsHeading: string;
-  whyUsList: string;
+  whyUsList: object[];
   whyUsFinalText: string;
 };
