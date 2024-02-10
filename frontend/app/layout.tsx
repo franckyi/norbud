@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import React from 'react';
+import { Metadata } from "next";
 import "./globals.css";
 import Hero from "./ui/hero";
 import { archivo } from "./ui/fonts";
-import ContactSection from "./ui/contact";
+import Contact from "./ui/contact";
 import Footer from "./ui/footer";
 import getData from "./lib/get-data";
 import { companyInfoRequest } from "./data/company-info-request";
@@ -16,14 +17,13 @@ export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   let companyInfo = await getData(companyInfoRequest.URL);
-  let heroData = await getData(companyInfoRequest.URL);
 
   return (
     <html lang="pl">
       <body className={archivo.className}>
-        <Hero heading={heroData.acf.aboutUsHeading} />
+        <Hero heading={companyInfo.acf.aboutUsHeading} />
         <main>{children}</main>
-        <ContactSection companyInfo={companyInfo} />
+        <Contact companyInfo={companyInfo} /> {/* Pass companyInfo as prop */}
         <Footer />
       </body>
     </html>

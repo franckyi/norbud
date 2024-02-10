@@ -23,7 +23,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col">
+        <form onSubmit={handleSubmit} className="flex flex-col my-16">
             <input
                 type="text"
                 name="name"
@@ -59,7 +59,7 @@ const ContactForm: React.FC = () => {
                 className="bg-gray-200 mb-4 py-2 px-4 rounded-sm h-32"
                 required
             ></textarea>
-            <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-sm hover:bg-blue-600">
+            <button type="submit" className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800">
                 Send Message
             </button>
         </form>
