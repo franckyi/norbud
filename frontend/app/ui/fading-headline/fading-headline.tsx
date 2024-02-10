@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "./FadingHeadline.css";
+import "./fading-headline.css";
 import { tektur } from "../fonts";
 import { FadingHeadlineProps } from "@/app/types/fading-headline-props";
 

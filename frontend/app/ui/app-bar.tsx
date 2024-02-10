@@ -5,7 +5,6 @@ import { NAV_LINKS } from "../data/nav-links";
 
 export default function AppBar() {
   return (
-    // TODO: make sticky after scroll
     <div className="flex justify-center gap-8 top-0 lg:top-8 z-50 lg:pt-8 lg:ml-80">
       <Image
         src={"/logo.svg"}

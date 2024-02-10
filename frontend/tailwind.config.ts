@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "hero-1": "url('/hero1.webp')",
+        "hero-short": "url('/hero-short.webp')",
       },
     },
   },

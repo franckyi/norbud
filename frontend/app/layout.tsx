@@ -3,6 +3,8 @@ import "./globals.css";
 import Hero from "./ui/hero";
 import { archivo } from "./ui/fonts";
 import Footer from "./ui/footer";
+import getData from "./lib/getData";
+import { companyInfoRequest } from "./data/company-info-request";
 
 export const metadata: Metadata = {
   title: "NOR-BUD od 2021 r. Zmieniamy Polskę",
@@ -12,10 +14,12 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  let heroData = await getData(companyInfoRequest.URL);
+
   return (
     <html lang="pl">
       <body className={archivo.className}>
-        <Hero bg={"bg-hero-1"} />
+        <Hero heading={heroData.acf.aboutUsHeading} />
         <main>{children}</main>
         <Footer />
       </body>

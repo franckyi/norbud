@@ -1,25 +1,32 @@
+"use client";
 import AppBar from "./app-bar";
 import { HeroProps } from "../types/hero-props";
 import getData from "../lib/getData";
 import { companyInfoRequest } from "../data/company-info-request";
-import FadingHeadline from "./FadingHeadline/FadingHeadline";
+import FadingHeadline from "./fading-headline/fading-headline";
 import Numbers from "./home/numbers";
+import { usePathname } from "next/navigation";
 
 const heroClasses = "min-h-screen w-full bg-no-repeat bg-cover";
 const words = ["Innowacyjność", "Doświadczenie", "Nowoczesność"];
+let isHome = null;
 
-async function Hero({ bg }: HeroProps) {
-  let data = await getData(companyInfoRequest.URL);
-  let aboutUsHeading = data.acf.aboutUsHeading;
+function Hero({ heading }: HeroProps) {
+  const pathName = usePathname();
+  isHome = pathName === "/" ? true : false;
+  let heroBg: string | null = null;
+  heroBg = isHome ? "bg-hero-1" : "bg-hero-short";
 
   return (
-    <header className={heroClasses + " " + bg}>
+    <header className={heroClasses + " " + heroBg}>
       <AppBar />
-      <div className="lg:ml-80 my-16 text-white">
-        <p className="italic text-xl">{aboutUsHeading}</p>
-        <FadingHeadline words={words} interval={2000} />
-        <Numbers />
-      </div>
+      {isHome && (
+        <div className="lg:ml-80 my-16 text-white">
+          <p className="italic text-xl">{heading}</p>
+          <FadingHeadline words={words} interval={2000} />
+          <Numbers />
+        </div>
+      )}
     </header>
   );
 }
