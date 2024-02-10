@@ -1,10 +1,11 @@
 import { WhyUsProps } from "@/app/types/why-us-props";
+import { UserGroupIcon } from "@heroicons/react/24/solid";
 
 async function WhyUs({ whyUsHeading, whyUsList, whyUsFinalText }: WhyUsProps) {
   return (
     <section id="about-us" className="my-16 mx-auto text-center">
       <h2 className="my-8 text-2xl font-extrabold uppercase">{whyUsHeading}</h2>
-      <div className="flex w-3/4 gap-4 mx-8 my-16 mx-auto text-center">
+      <div className="flex w-3/4 gap-4 mx-8 mx-auto text-center">
         {whyUsList.map((obj) => {
           return (
             <article
@@ -20,7 +21,8 @@ async function WhyUs({ whyUsHeading, whyUsList, whyUsFinalText }: WhyUsProps) {
           );
         })}
       </div>
-      <p className="py-16 px-40 text-xl bg-green-700 text-white">
+      <p className="my-16 py-16 px-40 text-xl bg-green-700 text-white">
+        <UserGroupIcon className="h-16 w-16 my-8 mx-auto" />
         {whyUsFinalText}
       </p>
     </section>
