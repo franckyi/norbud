@@ -1,10 +1,13 @@
 import AboutUs from "./ui/home/about-us";
 import getData from "./lib/getData";
 import { companyInfoRequest } from "./lib/company-info-request";
+import { ofertaRequest } from "./lib/oferta-request";
 import WhyUs from "./ui/home/why-us";
+import Oferta from "./ui/home/oferta";
 
 async function Home() {
   let data = await getData(companyInfoRequest.URL);
+  let oferta = await getData(ofertaRequest.URL);
   data = data.acf;
 
   let whyUsList = [
@@ -22,7 +25,7 @@ async function Home() {
         whyUsList={whyUsList}
         whyUsFinalText={data.whyUsFinalText}
       />
-      <p>test 2</p>
+      <Oferta ofertaList={oferta} />
     </>
   );
 }
