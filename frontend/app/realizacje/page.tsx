@@ -9,6 +9,7 @@ import {
   CurrencyEuroIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
+import ImageCarousel from "../ui/image-carousel";
 
 async function Portfolio() {
   let data = await getData(realizacjeRequest.URL);
@@ -82,8 +83,8 @@ async function Portfolio() {
                 )}
               </div>
 
-              <div className="w-1/3 border border-1 border-solid border-stone-900">
-                carousel here
+              <div className="w-1/3">
+                <ImageCarousel galleryId={realizacja.acf.galleryId} />
               </div>
             </div>
           </article>
