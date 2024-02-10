@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
 import "./globals.css";
 import Hero from "./ui/hero";
-
-const archivo = Archivo({ subsets: ["latin-ext"] });
+import { archivo } from "./ui/fonts";
 
 export const metadata: Metadata = {
   title: "NOR-BUD od 2021 r. Zmieniamy Polskę",
