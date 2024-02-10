@@ -1,5 +1,5 @@
 import AboutUs from "./ui/home/about-us";
-import getData from "./lib/getData";
+import getData from "./lib/get-data";
 import { companyInfoRequest } from "./lib/company-info-request";
 import { ofertaRequest } from "./lib/oferta-request";
 import WhyUs from "./ui/home/why-us";

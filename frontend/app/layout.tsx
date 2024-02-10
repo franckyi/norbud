@@ -3,7 +3,7 @@ import "./globals.css";
 import Hero from "./ui/hero";
 import { archivo } from "./ui/fonts";
 import Footer from "./ui/footer";
-import getData from "./lib/getData";
+import getData from "./lib/get-data";
 import { companyInfoRequest } from "./data/company-info-request";
 
 export const metadata: Metadata = {
