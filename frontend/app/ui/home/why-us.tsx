@@ -1,5 +1,5 @@
 import { WhyUsProps } from "@/app/types/why-us-props";
-import { UserGroupIcon } from "@heroicons/react/24/solid";
+import { UserGroupIcon } from "@heroicons/react/24/outline";
 
 async function WhyUs({ whyUsHeading, whyUsList, whyUsFinalText }: WhyUsProps) {
   return (

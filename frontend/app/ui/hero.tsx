@@ -5,18 +5,21 @@ import FadingHeadline from "./fading-headline/fading-headline";
 import Numbers from "./home/numbers";
 import { usePathname } from "next/navigation";
 
-const heroClasses = "min-h-screen w-full bg-no-repeat";
+const baseClasses = "w-full bg-no-repeat";
 const words = ["Innowacyjność", "Doświadczenie", "Nowoczesność"];
 let isHome = null;
 
 function Hero({ heading }: HeroProps) {
   const pathName = usePathname();
   isHome = pathName === "/" ? true : false;
-  let heroBg: string | null = null;
-  heroBg = isHome ? "bg-hero-1 bg-cover" : "bg-hero-short";
+
+  let heroClasses: string | null = null;
+  heroClasses = isHome
+    ? "bg-hero-1 bg-cover min-h-screen"
+    : "bg-hero-short bg-cover min-h-80";
 
   return (
-    <header className={heroClasses + " " + heroBg}>
+    <header className={baseClasses + " " + heroClasses}>
       <AppBar />
       {isHome && (
         <div className="lg:ml-80 my-16 text-white">

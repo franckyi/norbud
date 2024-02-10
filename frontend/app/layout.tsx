@@ -4,7 +4,7 @@ import Hero from "./ui/hero";
 import { archivo } from "./ui/fonts";
 import ContactSection from "./ui/contact";
 import Footer from "./ui/footer";
-import getData from "./lib/getData";
+import getData from "./lib/get-data";
 import { companyInfoRequest } from "./data/company-info-request";
 
 export const metadata: Metadata = {
