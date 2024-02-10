@@ -17,6 +17,16 @@ async function Hero({ bg }: HeroProps) {
       <div className="lg:ml-80 my-16 text-white">
         <p className="italic text-xl">{aboutUsHeading}</p>
         <FadingHeadline words={words} interval={2000} />
+        <div className="flex gap-4">
+          <p className="w-36 h-36 p-12 flex flex-col justify-between items-center bg-green-700">
+            <div className="text-6xl">10+</div>{" "}
+            <span className="text-base font-light">Realizacje</span>
+          </p>
+          <p className="w-36 h-36 p-12 flex flex-col justify-between items-center bg-green-700">
+            <div className="text-6xl">22</div>{" "}
+            <span className="text-base font-light">Powiatów</span>
+          </p>
+        </div>
       </div>
     </header>
   );
