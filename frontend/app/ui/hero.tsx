@@ -1,7 +1,7 @@
 import AppBar from "./app-bar";
 import { HeroProps } from "../types/hero-props";
 import getData from "../lib/getData";
-import { companyInfoRequest } from "../data/company-info-request";
+import { companyInfoRequest } from "../lib/company-info-request";
 
 const heroClasses = "min-h-screen w-full bg-no-repeat bg-cover";
 
