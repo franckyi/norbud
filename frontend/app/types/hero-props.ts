@@ -1,3 +1,3 @@
 export type HeroProps = {
-  bg: string;
+  heading: string | null;
 };
