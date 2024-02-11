@@ -11,6 +11,7 @@ const config: Config = {
       backgroundImage: {
         "hero-1": "url('/hero1.webp')",
         "hero-short": "url('/hero-short.webp')",
+        "img-boisko": "url('/img-boisko.webp')",
       },
     },
   },
