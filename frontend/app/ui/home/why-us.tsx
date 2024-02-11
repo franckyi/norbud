@@ -21,7 +21,8 @@ async function WhyUs({ whyUsHeading, whyUsList, whyUsFinalText }: WhyUsProps) {
           );
         })}
       </div>
-      <p className="my-16 py-16 px-40 text-xl bg-green-700 text-white">
+      <div className="min-h-screen mt-16 bg-cover bg-img-boisko"></div>
+      <p className="mb-16 py-16 px-40 text-xl bg-green-700 text-white">
         <UserGroupIcon className="h-16 w-16 mb-8 mx-auto" />
         {whyUsFinalText}
       </p>
