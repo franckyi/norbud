@@ -27,12 +27,12 @@ export default function AppBar() {
             {label}
           </Link>
         ))}
-        <Link
+        <a
           href="mailto:biuro@nor-bud.com"
           className="px-4 py-1 ml-2 bg-neutral-200 text-neutral-900 rounded-full hover:bg-white hover:text-green-700"
         >
-          Kontakt
-        </Link>
+          Napisz o Twoim projekcie
+        </a>
       </nav>
     </div>
   );
