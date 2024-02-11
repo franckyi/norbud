@@ -84,7 +84,7 @@ async function Portfolio() {
               </div>
               {/* end left col */}
 
-              <div className="w-2/4 ">
+              <div className="w-2/4">
                 <ImageCarousel galleryId={realizacja.acf.galleryId} />
               </div>
               {/* end right col */}
