@@ -23,14 +23,14 @@ async function Portfolio() {
       </h2>
       {realizacje.length > 0 &&
         realizacje.map((realizacja: PortfolioItemProps) => (
-          <article key={realizacja.id} className="my-16 text-left">
+          <article key={realizacja.id} className="w-full my-16 text-left">
             <h2 className="mb-2 text-xl font-semibold">
               {realizacja.acf.title}
             </h2>
 
             <div className="flex gap-4">
               <div
-                className="w-2/3 p-8 text-left border border-1 border-solid border-stone-900"
+                className="p-8 text-left border border-1 border-solid border-stone-900"
                 key={realizacja.id}
               >
                 {realizacja.acf.investor && (
@@ -83,7 +83,7 @@ async function Portfolio() {
                 )}
               </div>
 
-              <div className="w-1/3">
+              <div className="w-4/4">
                 <ImageCarousel galleryId={realizacja.acf.galleryId} />
               </div>
             </div>
