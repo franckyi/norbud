@@ -17,7 +17,7 @@ async function Portfolio() {
   const heading = "Nasze realizacje";
 
   return (
-    <section id="realizacje" className="px-96 mx-auto text-center">
+    <section id="realizacje" className="px-24 mx-auto text-center">
       <h2 className="mt-16 mb-8 text-center text-2xl font-extrabold uppercase">
         {heading}
       </h2>
@@ -30,7 +30,7 @@ async function Portfolio() {
 
             <div className="flex gap-4">
               <div
-                className="p-8 text-left border border-1 border-solid border-stone-900"
+                className="w-2/4 p-8 text-left border border-1 border-solid border-stone-900"
                 key={realizacja.id}
               >
                 {realizacja.acf.investor && (
@@ -82,10 +82,12 @@ async function Portfolio() {
                   </div>
                 )}
               </div>
+              {/* end left col */}
 
-              <div className="w-4/4">
+              <div className="w-2/4">
                 <ImageCarousel galleryId={realizacja.acf.galleryId} />
               </div>
+              {/* end right col */}
             </div>
           </article>
         ))}
