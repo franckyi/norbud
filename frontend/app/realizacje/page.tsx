@@ -9,6 +9,7 @@ import {
   CurrencyEuroIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
+import ImageCarousel from "../ui/image-carousel";
 
 async function Portfolio() {
   let data = await getData(realizacjeRequest.URL);
@@ -16,20 +17,20 @@ async function Portfolio() {
   const heading = "Nasze realizacje";
 
   return (
-    <section id="realizacje" className="px-96 mx-auto text-center">
+    <section id="realizacje" className="px-24 mx-auto text-center">
       <h2 className="mt-16 mb-8 text-center text-2xl font-extrabold uppercase">
         {heading}
       </h2>
       {realizacje.length > 0 &&
         realizacje.map((realizacja: PortfolioItemProps) => (
-          <article key={realizacja.id} className="my-16 text-left">
+          <article key={realizacja.id} className="w-full my-16 text-left">
             <h2 className="mb-2 text-xl font-semibold">
               {realizacja.acf.title}
             </h2>
 
             <div className="flex gap-4">
               <div
-                className="w-2/3 p-8 text-left border border-1 border-solid border-stone-900"
+                className="w-2/4 p-8 text-left border border-1 border-solid border-stone-900"
                 key={realizacja.id}
               >
                 {realizacja.acf.investor && (
@@ -81,10 +82,12 @@ async function Portfolio() {
                   </div>
                 )}
               </div>
+              {/* end left col */}
 
-              <div className="w-1/3 border border-1 border-solid border-stone-900">
-                carousel here
+              <div className="w-2/4">
+                <ImageCarousel galleryId={realizacja.acf.galleryId} />
               </div>
+              {/* end right col */}
             </div>
           </article>
         ))}
