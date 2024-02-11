@@ -20,9 +20,12 @@ function ImageCarousel({ galleryId }: any) {
 
 function CarouselItem(props: any) {
   return (
-    <Paper>
-      <Image src={props.src} alt="Norbud" width={400} height={300} />
-    </Paper>
+    // <Paper>
+    // <Image src={props.src} alt="Norbud" width={800} height={450} />
+    // </Paper>
+    <div>
+      <Image src={props.src} alt="Norbud" width={800} height={450} />
+    </div>
   );
 }
 
