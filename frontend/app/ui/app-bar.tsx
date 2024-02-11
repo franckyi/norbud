@@ -27,12 +27,12 @@ export default function AppBar() {
             {label}
           </Link>
         ))}
-        <Link
-          href="mailto:biuro@nor-bud.com"
+        <a
+          href="tel:012-345-678"
           className="px-4 py-1 ml-2 bg-neutral-200 text-neutral-900 rounded-full hover:bg-white hover:text-green-700"
         >
-          Kontakt
-        </Link>
+          Zadzwoń 012-345-678
+        </a>
       </nav>
     </div>
   );
