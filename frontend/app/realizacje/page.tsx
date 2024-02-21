@@ -33,6 +33,11 @@ async function Portfolio() {
                 className="w-2/4 p-8 text-left border border-1 border-solid border-stone-900"
                 key={realizacja.id}
               >
+                {realizacja.acf.galleryId && (
+                  <div className="mb-4 text-sm text-neutral-400">
+                    #{realizacja.acf.galleryId}
+                  </div>
+                )}
                 {realizacja.acf.investor && (
                   <div className="flex justify-between mb-4">
                     <h3 className="text-sm">
