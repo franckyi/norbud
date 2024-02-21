@@ -12,7 +12,7 @@ import {
 import ImageCarousel from "../ui/image-carousel";
 
 async function Portfolio() {
-  let data = await getData(realizacjeRequest.URL);
+  const data = await getData(realizacjeRequest.URL);
   const realizacje = data;
   const heading = "Nasze realizacje";
 
@@ -90,7 +90,8 @@ async function Portfolio() {
               {/* end left col */}
 
               <div className="w-2/4">
-                <ImageCarousel galleryId={realizacja.acf.galleryId} />
+                testing
+                {/* <ImageCarousel galleryId={realizacja.acf.galleryId} /> */}
               </div>
               {/* end right col */}
             </div>

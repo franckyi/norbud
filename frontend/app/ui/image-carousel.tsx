@@ -1,19 +1,32 @@
 "use client";
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button } from "@mui/material";
+import { Paper } from "@mui/material";
 import Image from "next/image";
 import createGallery from "../lib/create-gallery";
-import { sizes } from "../data/image-galleries";
+import getData from "../lib/get-data";
+import { galleryRequest } from "../lib/gallery-request";
 
 function ImageCarousel({ galleryId }: any) {
-  let srcList: string[] = createGallery(galleryId, sizes);
+  let srcList: string[] = [];
+  const data = getData(galleryRequest.URL);
+
+  data.then((resolve) => {
+    resolve.find((gallery: any) => {
+      if (gallery.title.rendered === galleryId) {
+        const string = gallery.title.rendered;
+        const regex = /https:\/\/[^ ]+\.webp/g;
+        const matches = string.match(regex);
+        srcList = matches.map((url: string) => url.trim());
+        console.log("srcList", srcList);
+      }
+    });
+  });
 
   return (
     <Carousel>
-      {srcList.map((src, i) => (
-        <CarouselItem key={galleryId} src={src} />
-      ))}
+      {srcList.length > 0 &&
+        srcList.map((src, i) => <CarouselItem key={galleryId} src={src} />)}
     </Carousel>
   );
 }
