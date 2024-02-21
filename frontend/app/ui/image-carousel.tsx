@@ -6,6 +6,7 @@ import Image from "next/image";
 import createGallery from "../lib/create-gallery";
 import getData from "../lib/get-data";
 import { galleryRequest } from "../lib/gallery-request";
+import getContentFromHtml from "../lib/get-content-from-html";
 
 function ImageCarousel({ galleryId }: any) {
   let srcList: string[] = [];
@@ -14,11 +15,27 @@ function ImageCarousel({ galleryId }: any) {
   data.then((resolve) => {
     resolve.find((gallery: any) => {
       if (gallery.title.rendered === galleryId) {
-        const string = gallery.title.rendered;
-        const regex = /https:\/\/[^ ]+\.webp/g;
-        const matches = string.match(regex);
-        srcList = matches.map((url: string) => url.trim());
-        console.log("srcList", srcList);
+        // const string = gallery.title.rendered;
+        // const regex = /https:\/\/[^ ]+\.webp/g;
+        // const matches = string.match(regex);
+        // srcList = matches.map((url: string) => url.trim());
+        // console.log("srcList", srcList);
+
+        const galleryContent = getContentFromHtml(gallery.content.rendered);
+        // Ottieni tutti gli elementi img
+        const imgTags = document.querySelectorAll("img");
+
+        // Inizializza un array vuoto per memorizzare gli src
+        // const srcList = [];
+
+        // Itera su tutti gli elementi img e ottieni gli src
+        imgTags.forEach((img) => {
+          const src: any = img.getAttribute("src");
+          srcList.push(src);
+        });
+
+        // Stampare gli src
+        console.log(srcList);
       }
     });
   });
