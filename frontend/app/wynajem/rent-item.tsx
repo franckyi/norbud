@@ -4,14 +4,14 @@ import { RentItemProps } from "../types/rent-item-props";
 
 function RentItem({ item }: { item: RentItemProps }) {
   return (
-    <article key={item.id} className="w-full my-24 text-left">
+    <article key={item.id} className="w-full my-8 lg:my-24 lg:text-left">
       <h2 className="py-2 px-8 mb-2 text-xl font-semibold bg-green-700 text-white rounded-t-full">
         {item.acf.title}
       </h2>
 
-      <div className="flex gap-4">
+      <div className="lg:flex gap-4">
         <div
-          className="w-2/4 p-8 text-left border border-1 border-solid border-stone-900"
+          className="lg:w-2/4 p-8 text-left border border-1 border-solid border-stone-900"
           key={item.id}
         >
           {item.acf.galleryId && (
@@ -30,7 +30,7 @@ function RentItem({ item }: { item: RentItemProps }) {
         </div>
         {/* end left col */}
 
-        <div className="w-2/4">
+        <div className="lg:w-2/4 max-md:my-4">
           <ImageCarousel galleryId={item.acf.galleryId} />
         </div>
         {/* end right col */}

@@ -12,7 +12,7 @@ import { PortfolioItemProps } from "../types/portfolio-item-props";
 import { useState } from "react";
 
 const ColLeftClasses =
-  "w-2/4 p-8 text-left border border-1 border-solid border-stone-900 rounded";
+  "lg:w-2/4 p-8 text-left border border-1 border-solid border-stone-900 rounded";
 
 function WorkItem({
   item,
@@ -27,10 +27,10 @@ function WorkItem({
   return (
     <li
       key={item.id}
-      className="first:mt-0 my-8 py-24 text-left even:bg-green-700 even:text-white dark:even:bg-green-700 dark:even:text-white"
+      className="first:mt-0 my-8 p-8 lg:py-24 text-left even:bg-green-700 even:text-white dark:even:bg-green-700 dark:even:text-white"
     >
-      <h2 className="px-40 mb-2 text-2xl font-semibold">{item.acf.title}</h2>
-      <div className="px-40 flex gap-4">
+      <h2 className="lg:px-40 mb-2 text-2xl font-semibold">{item.acf.title}</h2>
+      <div className="lg:px-40 lg:flex gap-4">
         {/* start left col */}
         <div className={`${ColLeftClasses} ${bgClass}`} key={item.id}>
           {item.acf.galleryId && (
@@ -84,7 +84,7 @@ function WorkItem({
         </div>
         {/* end left col */}
 
-        <div className="w-2/4">
+        <div className="max-md:mt-4 lg:w-2/4">
           <ImageCarousel galleryId={item.acf.galleryId} />
         </div>
         {/* end right col */}

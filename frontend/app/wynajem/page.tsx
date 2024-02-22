@@ -9,8 +9,8 @@ async function Rent() {
   const heading = "Wynajem maszyn oraz usługi";
 
   return (
-    <section id="wynajem" className="px-24 mx-auto text-center">
-      <h2 className="mt-16 mb-8 text-center text-2xl font-extrabold uppercase">
+    <section id="wynajem" className="p-8 lg:px-24 mx-auto text-center">
+      <h2 className="my-8 lg:mt-16 lg:mb-8 text-center text-2xl font-extrabold uppercase">
         {heading}
       </h2>
       {rentItems.length > 0 &&
