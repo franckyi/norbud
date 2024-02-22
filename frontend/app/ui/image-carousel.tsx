@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import Image from "next/image";
-import createGallery from "../lib/create-gallery";
 import getData from "../lib/get-data";
 import { galleryRequest } from "../lib/gallery-request";
-import getContentFromHtml from "../lib/get-content-from-html";
 import { ImageCarouselProps } from "../types/image-carousel-props";
 
 function ImageCarousel({ galleryId }: ImageCarouselProps) {
@@ -42,7 +40,7 @@ function ImageCarousel({ galleryId }: ImageCarouselProps) {
           ))}
         </Carousel>
       ) : (
-        <div>Loading...</div>
+        <div>Ops! Nie znalazłem zdjęcia... Proszę spróbuj później</div>
       )}
     </div>
   );

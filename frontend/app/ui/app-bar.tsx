@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-
 import { NAV_LINKS } from "../data/nav-links";
 
 export default function AppBar() {
