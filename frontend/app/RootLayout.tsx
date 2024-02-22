@@ -8,7 +8,7 @@ export default function RootLayout({
     <html lang="pl">
       <body className={archivo.className}>
         <AppBar />
-        <main bg="bg-hero-1">{children}</main>
+        <main>{children}</main>
         <footer>@ 2024 Norbud. All rights reserved.</footer>
       </body>
     </html>

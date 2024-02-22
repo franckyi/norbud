@@ -29,7 +29,7 @@ function WorkItem({
       key={item.id}
       className="first:mt-0 my-8 p-8 lg:py-24 text-left even:bg-green-700 even:text-white dark:even:bg-green-700 dark:even:text-stone-400"
     >
-      <h2 className="lg:px-40 mb-2 text-2xl font-semibold text-stone-100">
+      <h2 className="lg:px-40 mb-2 text-2xl font-semibold dark:text-stone-100">
         {item.acf.title}
       </h2>
       <div className="lg:px-40 lg:flex gap-4">
