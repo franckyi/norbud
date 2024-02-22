@@ -5,7 +5,7 @@ import { RentItemProps } from "../types/rent-item-props";
 function RentItem({ item }: { item: RentItemProps }) {
   return (
     <article key={item.id} className="w-full my-24 text-left">
-      <h2 className="p-2 mb-2 text-xl font-semibold bg-green-700 text-white">
+      <h2 className="py-2 px-8 mb-2 text-xl font-semibold bg-green-700 text-white rounded-t-full">
         {item.acf.title}
       </h2>
 
@@ -36,9 +36,9 @@ function RentItem({ item }: { item: RentItemProps }) {
         {/* end right col */}
       </div>
       <a
-        href="tel:+48500123456"
+        href="mailto:biuro@nor-bud.com"
         title="Zadzwoń do nas"
-        className="block mt-2 mb-8 py-2 text-xl text-center bg-stone-300 hover:bg-green-700 text-stone-900 hover:text-white rounded-full uppercase"
+        className="block mt-2 mb-8 py-2 text-xl text-center bg-stone-300 hover:bg-green-700 text-stone-900 hover:text-white rounded-b-full uppercase"
       >
         Wynajmuj
       </a>
