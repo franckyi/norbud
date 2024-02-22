@@ -21,7 +21,7 @@ export default async function RootLayout({
     <html lang="pl">
       <body className={archivo.className}>
         <Hero heading={heroData.acf.aboutUsHeading} />
-        <main>{children}</main>
+        <main className="text-center">{children}</main>
         <Footer />
       </body>
     </html>

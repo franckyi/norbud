@@ -73,7 +73,7 @@ function WorkItem({
           )}
 
           {item.acf.taskList && (
-            <div className="flex">
+            <div className="flex gap-4">
               <h3 className="text-sm basis-1/4">
                 <ClipboardDocumentListIcon className="h-5 w-5 text-stone-400 inline mr-2" />
                 Zakres prac:{" "}

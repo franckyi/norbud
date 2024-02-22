@@ -5,6 +5,7 @@ import { ofertaRequest } from "./lib/oferta-request";
 import WhyUs from "./ui/home/why-us";
 import Oferta from "./ui/home/oferta";
 import WriteUsButton from "./ui/common/write-us-button";
+import Image from "next/image";
 
 async function Home() {
   let data = await getData(companyInfoRequest.URL);
@@ -21,6 +22,19 @@ async function Home() {
   return (
     <>
       <AboutUs aboutUsText={data.aboutUsText} />
+      <div className="my-24 text-9xl text-green-700 font-extrabold text-center">
+        <p>Połączymy</p>
+        <div className="mt-4 p-8 mx-auto bg-green-700">
+          {/* <p>świat</p> */}
+          <Image
+            width={600}
+            height={400}
+            src="/bud.webp"
+            alt="Przejście zdjęcie"
+            className="mx-auto rounded-xl shadow-xl border-2 border-green-400"
+          />
+        </div>
+      </div>
       <WhyUs
         whyUsHeading={data.whyUsHeading}
         whyUsList={whyUsList}
