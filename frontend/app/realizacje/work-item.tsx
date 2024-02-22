@@ -72,7 +72,6 @@ function WorkItem({
             </div>
           )}
 
-          {/* {isMounted && item.acf.taskList && ( */}
           {item.acf.taskList && (
             <div className="flex">
               <h3 className="text-sm basis-1/4">
