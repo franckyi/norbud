@@ -40,7 +40,7 @@ function ImageCarousel({ galleryId }: ImageCarouselProps) {
           ))}
         </Carousel>
       ) : (
-        <div>Ops! Nie znalazłem zdjęcia... Proszę spróbuj później</div>
+        <div>Ładowanie...</div>
       )}
     </div>
   );

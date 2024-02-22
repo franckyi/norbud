@@ -1,6 +1,6 @@
 const DOMAIN_NAME = "https://nor-bud.com";
-const WPPATH = `new/wp-json/wp/v2/realizacje`;
+const WPPATH = `new/wp-json/wp/v2/wynajem`;
 
-export const realizacjeRequest = {
+export const wynajemRequest = {
   URL: `${DOMAIN_NAME}/${WPPATH}`,
 };
