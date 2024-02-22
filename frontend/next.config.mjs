@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "7fiat922112129.imgix.net",
+        hostname: "admin.nor-bud.com",
         port: "",
-        pathname: "/norbud/realizacje/**",
+        pathname: "/wp-content/uploads/**",
       },
     ],
   },

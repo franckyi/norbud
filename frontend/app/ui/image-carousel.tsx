@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import Image from "next/image";
@@ -7,44 +7,44 @@ import createGallery from "../lib/create-gallery";
 import getData from "../lib/get-data";
 import { galleryRequest } from "../lib/gallery-request";
 import getContentFromHtml from "../lib/get-content-from-html";
+import { ImageCarouselProps } from "../types/image-carousel-props";
 
-function ImageCarousel({ galleryId }: any) {
-  let srcList: string[] = [];
-  const data = getData(galleryRequest.URL);
+function ImageCarousel({ galleryId }: ImageCarouselProps) {
+  const [srcList, setSrcList] = useState<string[]>([]);
 
-  data.then((resolve) => {
-    resolve.find((gallery: any) => {
-      if (gallery.title.rendered === galleryId) {
-        // const string = gallery.title.rendered;
-        // const regex = /https:\/\/[^ ]+\.webp/g;
-        // const matches = string.match(regex);
-        // srcList = matches.map((url: string) => url.trim());
-        // console.log("srcList", srcList);
+  useEffect(() => {
+    const fetchGallery = async () => {
+      const galleries = await getData(galleryRequest.URL);
+      const gallery = galleries.find(
+        (item: any) => item.title.rendered === galleryId
+      );
 
-        const galleryContent = getContentFromHtml(gallery.content.rendered);
-        // Ottieni tutti gli elementi img
-        const imgTags = document.querySelectorAll("img");
-
-        // Inizializza un array vuoto per memorizzare gli src
-        // const srcList = [];
-
-        // Itera su tutti gli elementi img e ottieni gli src
-        imgTags.forEach((img) => {
-          const src: any = img.getAttribute("src");
-          srcList.push(src);
-        });
-
-        // Stampare gli src
-        console.log(srcList);
+      if (gallery) {
+        const stringToBeParsed = gallery.content.rendered;
+        const regex = /https:\/\/[^ ]+\.webp/g;
+        const matches = stringToBeParsed.match(regex);
+        if (matches) {
+          const urls = matches.map((url: string) => url.trim());
+          setSrcList(urls);
+        }
       }
-    });
-  });
+    };
+
+    fetchGallery();
+  }, [galleryId]);
 
   return (
-    <Carousel>
-      {srcList.length > 0 &&
-        srcList.map((src, i) => <CarouselItem key={galleryId} src={src} />)}
-    </Carousel>
+    <div>
+      {srcList.length > 0 ? (
+        <Carousel>
+          {srcList.map((src, index) => (
+            <CarouselItem key={index} src={src} />
+          ))}
+        </Carousel>
+      ) : (
+        <div>Loading...</div>
+      )}
+    </div>
   );
 }
 

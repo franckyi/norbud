@@ -19,9 +19,8 @@ export default function AppBar() {
         draggable="false"
       />
       <nav
-        className="flex items-center gap-16 p-3 lg:px-4 lg:pl-12 lg:w-full text-sm tracking-wide lg:font-semibold leading-6 bg-green-700 text-neutral-100 uppercase"
+        className="flex items-center h-full gap-16 p-3 lg:px-4 lg:pl-12 lg:w-full text-sm tracking-wide lg:font-semibold leading-6 bg-green-700 text-neutral-100 uppercase"
         aria-label="Global"
-        style={{ height: "100%" }}
       >
         {NAV_LINKS.map(({ href, label }, index) => (
           <Link key={label} href={href}>
