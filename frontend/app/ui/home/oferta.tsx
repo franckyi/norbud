@@ -4,7 +4,7 @@ function Oferta({ ofertaList }: { ofertaList: string[] }) {
       <h2 className="mt-16 mb-8 text-center text-2xl font-extrabold uppercase">
         Oferta
       </h2>
-      <section id="oferta" className="w-2/5 mx-auto text-center">
+      <section id="oferta" className="w-2/5 mx-auto my-16 text-center">
         <div className="mx-auto flex flex-wrap gap-4 justify-center text-center">
           {ofertaList.map((oferta) => (
             <p

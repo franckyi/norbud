@@ -17,8 +17,8 @@ async function Portfolio() {
   const heading = "Nasze realizacje";
 
   return (
-    <section id="realizacje" className="px-24 mx-auto text-center">
-      <h2 className="mt-16 mb-8 text-center text-2xl font-extrabold uppercase">
+    <section id="realizacje" className="mx-auto text-center">
+      <h2 className="mt-16 text-center text-2xl font-extrabold uppercase">
         {heading}
       </h2>
       <ol>
@@ -26,17 +26,18 @@ async function Portfolio() {
           portfolioItems.map((item: PortfolioItemProps) => (
             <li
               key={item.id}
-              className="w-full my-28 text-left even:bg-green-700"
+              className="first:mt-0 my-8 py-24 text-left even:bg-green-700 even:text-white dark:even:bg-green-700 dark:even:text-white"
             >
-              <h2 className="mb-2 text-xl font-semibold">{item.acf.title}</h2>
-
-              <div className="flex gap-4">
+              <h2 className="px-40 mb-2 text-2xl font-semibold">
+                {item.acf.title}
+              </h2>
+              <div className="px-40 flex gap-4">
                 <div
                   className="w-2/4 p-8 text-left border border-1 border-solid border-stone-900"
                   key={item.id}
                 >
                   {item.acf.galleryId && (
-                    <div className="mb-4 text-sm text-neutral-400">
+                    <div className="mb-4 text-sm text-stone-400">
                       #{item.acf.galleryId}
                     </div>
                   )}

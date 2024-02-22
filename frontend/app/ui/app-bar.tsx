@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { NAV_LINKS } from "../data/nav-links";
+import WriteUsButton from "./common/write-us-button";
 
 export default function AppBar() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -18,7 +19,7 @@ export default function AppBar() {
         draggable="false"
       />
       <nav
-        className="flex items-center h-full gap-16 p-3 lg:px-4 lg:pl-12 lg:w-full text-sm tracking-wide lg:font-semibold leading-6 bg-green-700 text-neutral-100 uppercase"
+        className="flex items-center h-full gap-16 p-3 lg:px-4 lg:pl-12 lg:w-full text-sm tracking-wide lg:font-semibold leading-6 bg-green-700 text-stone-100 uppercase"
         aria-label="Global"
       >
         {NAV_LINKS.map(({ href, label }, index) => (
@@ -39,12 +40,11 @@ export default function AppBar() {
             </div>
           </Link>
         ))}
-        <a
-          href="mailto:biuro@nor-bud.com"
-          className="px-4 py-1 ml-2 bg-neutral-200 text-neutral-900 rounded-full hover:bg-white hover:text-green-700"
-        >
-          Napisz o Twoim projekcie
-        </a>
+        <WriteUsButton
+          bg="bg-white"
+          textColor="text-black"
+          bgHover="hover:bg-stone-900 hover:text-white"
+        />
       </nav>
     </div>
   );

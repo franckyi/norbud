@@ -17,7 +17,9 @@ async function Rent() {
       {rentItems.length > 0 &&
         rentItems.map((item: RentItemProps) => (
           <article key={item.id} className="w-full my-16 text-left">
-            <h2 className="mb-2 text-xl font-semibold">{item.acf.title}</h2>
+            <h2 className="p-2 mb-2 text-xl font-semibold bg-green-700 text-white">
+              {item.acf.title}
+            </h2>
 
             <div className="flex gap-4">
               <div
@@ -25,7 +27,7 @@ async function Rent() {
                 key={item.id}
               >
                 {item.acf.galleryId && (
-                  <div className="mb-4 text-sm text-neutral-400">
+                  <div className="mb-4 text-sm text-stone-400">
                     #{item.acf.galleryId}
                   </div>
                 )}

@@ -4,6 +4,7 @@ import { companyInfoRequest } from "./lib/company-info-request";
 import { ofertaRequest } from "./lib/oferta-request";
 import WhyUs from "./ui/home/why-us";
 import Oferta from "./ui/home/oferta";
+import WriteUsButton from "./ui/common/write-us-button";
 
 async function Home() {
   let data = await getData(companyInfoRequest.URL);
@@ -26,6 +27,11 @@ async function Home() {
         whyUsFinalText={data.whyUsFinalText}
       />
       <Oferta ofertaList={oferta} />
+      <WriteUsButton
+        bg="bg-green-700"
+        textColor="text-white"
+        bgHover="hover:bg-stone-900 hover:text-white"
+      />
     </>
   );
 }
