@@ -9,10 +9,10 @@ async function WhyUs({ whyUsHeading, whyUsList, whyUsFinalText }: WhyUsProps) {
         {whyUsList.map((item) => {
           return (
             <article
-              className="lg:w-1/2 p-8 text-left border border-1 border-solid border-stone-900 hover:bg-stone-100 hover:border-green-700 border-t-8 border-t-green-700"
+              className="lg:w-1/2 p-8 text-left border border-1 border-solid border-stone-900 hover:bg-stone-100 dark:hover:bg-stone-950 hover:border-green-700 border-t-8 border-t-green-700"
               key={item.id}
             >
-              <div className="font-extrabold text-8xl text-stone-200">
+              <div className="font-extrabold text-8xl text-stone-200 dark:text-stone-800">
                 {item.id}
               </div>
               <h3 className="mb-8 text-2xl font-bold">{item.heading}</h3>
@@ -22,10 +22,10 @@ async function WhyUs({ whyUsHeading, whyUsList, whyUsFinalText }: WhyUsProps) {
         })}
       </div>
       <div className="mt-24 text-5xl lg:text-9xl text-green-700 font-extrabold text-center">
-        <p>Budujemy</p>
+        <p className="opacity-20">Budujemy</p>
         <p>świat wokół Ciebie</p>
       </div>
-      <div className="min-h-screen mt-8 bg-no-repeat bg-img-boisko"></div>
+      <div className="h-screen mt-8 lg:bg-top bg-cover bg-no-repeat bg-img-boisko"></div>
       <p className="mb-16 py-16 max-md:px-8 lg:px-40 text-xl bg-green-700 text-white">
         <UserGroupIcon className="h-16 w-16 mb-8 mx-auto" />
         {whyUsFinalText}

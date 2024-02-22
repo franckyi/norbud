@@ -23,7 +23,8 @@ async function Home() {
     <>
       <AboutUs aboutUsText={data.aboutUsText} />
       <div className="lg:my-24 text-5xl lg:text-9xl text-green-700 font-extrabold text-center">
-        <p>Połączymy</p>
+        <p className="opacity-20">Łączymy</p>
+        <p>Polskie miasta</p>
         <div className="mt-4 p-8 mx-auto bg-green-700">
           <Image
             width={600}

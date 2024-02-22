@@ -22,26 +22,28 @@ function WorkItem({
   index: number;
 }) {
   const [isEven, setIsEven] = useState(index % 2 !== 0);
-  const bgClass = isEven ? "bg-stone-800" : "bg-stone-300";
+  const bgClass = isEven ? "bg-stone-800" : "bg-stone-300 dark:bg-stone-800";
 
   return (
     <li
       key={item.id}
-      className="first:mt-0 my-8 p-8 lg:py-24 text-left even:bg-green-700 even:text-white dark:even:bg-green-700 dark:even:text-white"
+      className="first:mt-0 my-8 p-8 lg:py-24 text-left even:bg-green-700 even:text-white dark:even:bg-green-700 dark:even:text-stone-400"
     >
-      <h2 className="lg:px-40 mb-2 text-2xl font-semibold">{item.acf.title}</h2>
+      <h2 className="lg:px-40 mb-2 text-2xl font-semibold text-stone-100">
+        {item.acf.title}
+      </h2>
       <div className="lg:px-40 lg:flex gap-4">
         {/* start left col */}
         <div className={`${ColLeftClasses} ${bgClass}`} key={item.id}>
           {item.acf.galleryId && (
-            <div className="mb-4 text-sm text-stone-400">
+            <div className="mb-4 text-sm text-stone-600">
               #{item.acf.galleryId}
             </div>
           )}
           {item.acf.investor && (
             <div className="flex justify-between mb-4">
               <h3 className="text-sm">
-                <CurrencyEuroIcon className="h-5 w-5 text-stone-400 inline mr-2" />
+                <CurrencyEuroIcon className="h-5 w-5 text-stone-500 inline mr-2" />
                 Inwestor:{" "}
               </h3>
               <p className="uppercase font-semibold">{item.acf.investor}</p>
@@ -51,7 +53,7 @@ function WorkItem({
           {item.acf.contractor && (
             <div className="flex justify-between mb-4">
               <h3 className="text-sm">
-                <UserCircleIcon className="h-5 w-5 text-stone-400 inline mr-2" />
+                <UserCircleIcon className="h-5 w-5 text-stone-500 inline mr-2" />
                 Generalny wykonawca:{" "}
               </h3>
               <p className="uppercase font-semibold">{item.acf.contractor}</p>
@@ -61,7 +63,7 @@ function WorkItem({
           {(item.acf.dateStart || item.acf.dateEnd) && (
             <div className="flex justify-between mb-4">
               <h3 className="text-sm">
-                <CalendarDaysIcon className="h-5 w-5 text-stone-400 inline mr-2" />
+                <CalendarDaysIcon className="h-5 w-5 text-stone-500 inline mr-2" />
                 Termin realizacji:{" "}
               </h3>
               <p className="uppercase font-semibold">
@@ -75,7 +77,7 @@ function WorkItem({
           {item.acf.taskList && (
             <div className="flex gap-4">
               <h3 className="text-sm basis-1/4">
-                <ClipboardDocumentListIcon className="h-5 w-5 text-stone-400 inline mr-2" />
+                <ClipboardDocumentListIcon className="h-5 w-5 text-stone-500 inline mr-2" />
                 Zakres prac:{" "}
               </h3>
               {getContentFromHtml(item.acf.taskList)}
