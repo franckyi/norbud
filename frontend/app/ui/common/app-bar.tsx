@@ -6,7 +6,7 @@ import { NAV_LINKS } from "../../data/nav-links";
 import WriteUsButton from "./write-us-button";
 
 export default function AppBar() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div className="lg:flex lg:justify-center lg:gap-8 top-0 lg:top-8 z-50 lg:pt-8 lg:ml-80">
