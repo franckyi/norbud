@@ -90,7 +90,6 @@ async function Portfolio() {
               {/* end left col */}
 
               <div className="w-2/4">
-                passing galleryId {realizacja.acf.galleryId}
                 <ImageCarousel galleryId={realizacja.acf.galleryId} />
               </div>
               {/* end right col */}
