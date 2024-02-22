@@ -1,5 +1,5 @@
 import AppBar from "./ui/common/app-bar";
-import { inter } from "./layout";
+import { inter } from "./ui/common/fonts";
 
 export default function RootLayout({
   children,
