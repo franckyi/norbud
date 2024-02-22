@@ -1,20 +1,24 @@
-function Oferta({ ofertaList }: { ofertaList: string[] }) {
+import { ServiceProps } from "@/app/types/services-props";
+
+type ServicesProps = ServiceProps[];
+
+function oferta({ services }: { services: ServicesProps }) {
   return (
     <>
       <h2 className="mt-16 mb-8 text-center text-2xl font-extrabold uppercase">
-        Oferta
+        service
       </h2>
       <section
-        id="oferta"
+        id="service"
         className="lg:w-2/5 max-md:p-4 mx-auto my-16 text-center"
       >
         <div className="mx-auto flex flex-wrap gap-4 justify-center text-center">
-          {ofertaList.map((oferta) => (
+          {services.map((service: ServiceProps) => (
             <p
               className="p-2 lg:p-4 max-md:w-32 max-md:h-32 w-40 h-40 flex justify-center items-center font-bold border border-2 border-solid border-green-700 hover:bg-green-700 hover:text-white"
-              key={oferta.id}
+              key={service.id}
             >
-              {oferta.title.rendered}
+              {service.title.rendered}
             </p>
           ))}
         </div>
@@ -23,4 +27,4 @@ function Oferta({ ofertaList }: { ofertaList: string[] }) {
   );
 }
 
-export default Oferta;
+export default oferta;

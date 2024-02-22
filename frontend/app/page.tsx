@@ -6,10 +6,11 @@ import WhyUs from "./ui/home/why-us";
 import Oferta from "./ui/home/oferta";
 import WriteUsButton from "./ui/common/write-us-button";
 import Image from "next/image";
+import { ServiceProps } from "./types/services-props";
 
 async function Home() {
   let data = await getData(companyInfoRequest.URL);
-  let oferta = await getData(ofertaRequest.URL);
+  let services: ServiceProps[] = await getData(ofertaRequest.URL);
   data = data.acf;
 
   let whyUsList = [
@@ -40,7 +41,7 @@ async function Home() {
         whyUsList={whyUsList}
         whyUsFinalText={data.whyUsFinalText}
       />
-      <Oferta ofertaList={oferta} />
+      <Oferta services={services} />
       <WriteUsButton
         bg="bg-green-700"
         textColor="text-white"
