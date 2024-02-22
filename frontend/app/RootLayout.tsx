@@ -1,4 +1,4 @@
-import AppBar from "./ui/app-bar";
+import AppBar from "./ui/common/app-bar";
 import { inter } from "./layout";
 
 export default function RootLayout({

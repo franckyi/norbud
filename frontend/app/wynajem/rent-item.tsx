@@ -1,5 +1,5 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import ImageCarousel from "../ui/image-carousel";
+import ImageCarousel from "../ui/common/image-carousel";
 import { RentItemProps } from "../types/rent-item-props";
 
 function RentItem({ item }: { item: RentItemProps }) {

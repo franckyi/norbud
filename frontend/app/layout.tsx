@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Hero from "./ui/hero";
-import { archivo } from "./ui/fonts";
-import Footer from "./ui/footer";
+import Hero from "./ui/common/hero";
+import { archivo } from "./ui/common/fonts";
+import Footer from "./ui/common/footer";
 import getData from "./lib/get-data";
 import { companyInfoRequest } from "./data/company-info-request";
 

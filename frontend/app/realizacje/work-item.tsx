@@ -5,7 +5,7 @@ import {
   CurrencyEuroIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import ImageCarousel from "../ui/image-carousel";
+import ImageCarousel from "../ui/common/image-carousel";
 import getContentFromHtml from "../lib/get-content-from-html";
 import getFormattedDate from "../lib/get-formatted-date";
 import { PortfolioItemProps } from "../types/portfolio-item-props";

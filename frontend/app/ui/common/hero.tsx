@@ -1,11 +1,11 @@
 "use client";
 import AppBar from "./app-bar";
-import { HeroProps } from "../types/hero-props";
-import FadingHeadline from "./fading-headline/fading-headline";
-import Numbers from "./home/numbers";
+import { HeroProps } from "../../types/hero-props";
+import FadingHeadline from "../fading-headline/fading-headline";
+import Numbers from "../home/numbers";
 import { usePathname } from "next/navigation";
 
-const baseClasses = "w-full bg-no-repeat";
+const baseClasses = "w-full max-md:p-8 bg-no-repeat";
 const words = ["Innowacyjność", "Doświadczenie", "Nowoczesność"];
 let isHome = null;
 

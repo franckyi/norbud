@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "./fading-headline.css";
-import { tektur } from "../fonts";
+import { tektur } from "../common/fonts";
 import { FadingHeadlineProps } from "@/app/types/fading-headline-props";
 
 const FadingHeadline: React.FC<FadingHeadlineProps> = ({
@@ -19,7 +19,7 @@ const FadingHeadline: React.FC<FadingHeadlineProps> = ({
   }, [words, interval]);
 
   return (
-    <div className="fading-text">
+    <div className="fading-text text-4xl max-md:my-8 lg:text-9xl">
       {words.map((word, index) => (
         <span
           className={`${tektur.className} ${
