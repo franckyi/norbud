@@ -4,8 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 import { NAV_LINKS } from "../../data/nav-links";
 import WriteUsButton from "./write-us-button";
+import ThemeSwitcher from "./theme-switcher/theme-switcher";
 
-export default function AppBar() {
+export default function AppBar({
+  handleThemeToggleClick,
+}: {
+  handleThemeToggleClick: () => void;
+}) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -41,6 +46,7 @@ export default function AppBar() {
             </div>
           </Link>
         ))}
+        <ThemeSwitcher handleThemeToggleClick={handleThemeToggleClick} />
         <WriteUsButton
           bg="bg-white"
           textColor="text-black"
