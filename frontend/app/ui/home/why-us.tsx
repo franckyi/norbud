@@ -15,7 +15,9 @@ async function WhyUs({ whyUsHeading, whyUsList, whyUsFinalText }: WhyUsProps) {
               <div className="font-extrabold text-8xl text-stone-200 dark:text-stone-800">
                 {item.id}
               </div>
-              <h3 className="mb-8 text-2xl font-bold">{item.heading}</h3>
+              <h3 className="mb-8 text-2xl font-bold dark:text-stone-200">
+                {item.heading}
+              </h3>
               <p>{item.desc}</p>
             </article>
           );

@@ -5,8 +5,8 @@ import Numbers from "../home/numbers";
 import getWelcomeMessage from "@/app/lib/get-welcome-message";
 import { useEffect, useState } from "react";
 
-const baseClasses =
-  "w-full flex pb-16 max-md:items-end items-center max-md:p-8 max-md:py-16 bg-no-repeat";
+const heroBaseClasses =
+  "flex items-end pb-16 max-md:p-8 max-md:py-16 bg-no-repeat";
 
 function Hero() {
   const [heading, setHeading] = useState("");
@@ -16,15 +16,15 @@ function Hero() {
   }, []);
 
   const isHome = CheckisHome();
-  const heroClasses = CheckisHome()
+  const bgClasses = CheckisHome()
     ? "bg-hero-1 bg-cover min-h-screen"
     : "bg-hero-short bg-cover min-h-80";
 
   return (
-    <header className={`${baseClasses} ${heroClasses}`}>
+    <header className={`${heroBaseClasses} ${bgClasses}`}>
       {isHome && (
         <div className="lg:ml-80 text-white">
-          <p className="italic text-xl">{heading}</p>
+          <p className="text-xl italic">{heading}</p>
           <AnimatedHeadline />
           <Numbers />
         </div>

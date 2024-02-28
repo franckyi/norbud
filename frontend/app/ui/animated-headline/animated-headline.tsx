@@ -4,7 +4,7 @@ import { tektur } from "../common/fonts";
 import "./animated-headline.css";
 
 const interval = 2000;
-const words = ["Innowacyjność", "Doświadczenie", "Nowoczesność"];
+const words = ["Solidność", "Innowacyjność", "Doświadczenie", "Nowoczesność"];
 
 function AnimatedHeadline() {
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
@@ -18,7 +18,7 @@ function AnimatedHeadline() {
   }, []);
 
   return (
-    <div className="fading-text text-4xl max-md:my-8 lg:text-9xl">
+    <div className="fading-text text-4xl lg:my-8 lg:text-9xl">
       {words.map((word, index) => (
         <span
           className={`${tektur.className} ${

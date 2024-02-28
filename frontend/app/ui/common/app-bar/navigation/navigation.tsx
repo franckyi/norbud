@@ -16,8 +16,12 @@ function Navigation({ toggleTheme }: NavigationProps) {
   return (
     <nav className={navigation.containerClasses} aria-label="Global">
       {NAV_LINKS.map(({ id, href, label }, index) => (
-        <Link key={id} href={href}>
-          <div className="relative z-10">{label}</div>
+        <Link
+          key={id}
+          href={href}
+          className="text-stone-300 hover:text-white border-b-4 border-green-700 hover:border-red-700 lg:hover:scale-105 transition-colors duration-300"
+        >
+          {label}
         </Link>
       ))}
       <ThemeSwitcher toggleTheme={toggleTheme} />
