@@ -5,9 +5,9 @@ import { ofertaRequest } from "./lib/oferta-request";
 import WhyUs from "./ui/home/why-us";
 import Oferta from "./ui/home/oferta";
 import WriteUsButton from "./ui/common/write-us-button";
-import Image from "next/image";
 import { ServiceProps } from "./types/services-props";
 import type { Metadata } from "next";
+import SampleWork from "./ui/home/sample-work";
 
 export const metadata: Metadata = {
   title: "NOR-BUD od 2021 r. Zmieniamy Polskę",
@@ -30,19 +30,7 @@ async function Home() {
   return (
     <>
       <AboutUs aboutUsText={data.aboutUsText} />
-      <div className="lg:my-24 text-5xl lg:text-9xl text-green-700 font-extrabold text-center">
-        <p className="opacity-20">Łączymy</p>
-        <p>Polskie miasta</p>
-        <div className="mt-4 p-8 mx-auto bg-green-700">
-          <Image
-            width={600}
-            height={400}
-            src="/bud.webp"
-            alt="Przejście zdjęcie"
-            className="mx-auto rounded-xl shadow-xl border-2 border-green-200"
-          />
-        </div>
-      </div>
+      <SampleWork />
       <WhyUs
         whyUsHeading={data.whyUsHeading}
         whyUsList={whyUsList}
