@@ -12,7 +12,7 @@ const ThemeContext = createContext<null | string>(null);
 function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const [theme, setTheme] = useState("dark");
 
-  function handleThemeToggleClick() {
+  function themeToggle() {
     if (theme === "dark") {
       setTheme("");
     } else {
@@ -22,9 +22,10 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <html lang="pl" className={theme}>
+      <html lang="pl" className={`scroll-smooth ${theme}`}>
         <body className={archivo.className}>
-          <AppBar handleThemeToggleClick={handleThemeToggleClick} />
+          <AppBar themeToggle={themeToggle} />
+          <p>{theme}</p>
           <Hero />
           <main className="text-center">{children}</main>
           <Footer />

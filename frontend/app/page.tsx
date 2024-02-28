@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 async function Home() {
   let data = await getData(companyInfoRequest.URL);
-  let services: ServiceProps[] = await getData(ofertaRequest.URL);
   data = data.acf;
+  const services: ServiceProps[] = await getData(ofertaRequest.URL);
 
   let whyUsList = [
     data.whyUsGroup1,

@@ -4,17 +4,22 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { MaterialUISwitch } from "./material-ui-switch";
 
 interface ThemeSwitcherProps {
-  handleThemeToggleClick: () => void;
+  themeToggle: () => void;
 }
 
-function ThemeSwitcher({ handleThemeToggleClick }: ThemeSwitcherProps) {
+function ThemeSwitcher({ themeToggle }: ThemeSwitcherProps) {
+  function handleClick() {
+    console.log("clicked");
+    themeToggle();
+  }
+
   return (
     <FormGroup>
       <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        label=""
+        label="test"
         className="m-0"
-        onClick={handleThemeToggleClick}
+        onClick={handleClick}
       />
     </FormGroup>
   );

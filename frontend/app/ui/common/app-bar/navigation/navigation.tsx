@@ -1,8 +1,7 @@
 import { NAV_LINKS } from "@/app/data/nav-links";
 import Link from "next/link";
-import { useState } from "react";
-import ThemeSwitcher from "../../theme-switcher/theme-switcher";
 import WriteUsButton from "../../write-us-button";
+import ThemeSwitcher from "../../theme-switcher/theme-switcher";
 
 const navigation = {
   containerClasses:
@@ -10,33 +9,18 @@ const navigation = {
 };
 
 interface NavigationProps {
-  handleThemeToggleClick: () => void;
+  themeToggle: () => void;
 }
 
-function Navigation({ handleThemeToggleClick }: NavigationProps) {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
+function Navigation({ themeToggle }: NavigationProps) {
   return (
     <nav className={navigation.containerClasses} aria-label="Global">
       {NAV_LINKS.map(({ id, href, label }, index) => (
         <Link key={id} href={href}>
-          <div
-            className="relative"
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div
-              className="absolute inset-x-0 bottom-0 border-b-4 border-transparent transition-all duration-300"
-              style={{
-                width: hoveredIndex === index ? "100%" : "0",
-                borderColor: hoveredIndex === index ? "#E53E3E" : "#48BB78",
-              }}
-            />
-            <div className="relative z-10">{label}</div>
-          </div>
+          <div className="relative z-10">{label}</div>
         </Link>
       ))}
-      <ThemeSwitcher handleThemeToggleClick={handleThemeToggleClick} />
+      <ThemeSwitcher themeToggle={themeToggle} />
       <WriteUsButton
         bg="bg-white"
         textColor="text-black"

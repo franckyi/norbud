@@ -1,13 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import "./fading-headline.css";
+import { useState, useEffect } from "react";
 import { tektur } from "../common/fonts";
-import { FadingHeadlineProps } from "@/app/types/fading-headline-props";
+import "./animated-headline.css";
 
-const FadingHeadline: React.FC<FadingHeadlineProps> = ({
-  words,
-  interval = 300,
-}) => {
+const interval = 2000;
+const words = ["Innowacyjność", "Doświadczenie", "Nowoczesność"];
+
+function AnimatedHeadline() {
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -16,7 +15,7 @@ const FadingHeadline: React.FC<FadingHeadlineProps> = ({
     }, interval);
 
     return () => clearInterval(intervalId);
-  }, [words, interval]);
+  }, []);
 
   return (
     <div className="fading-text text-4xl max-md:my-8 lg:text-9xl">
@@ -32,6 +31,6 @@ const FadingHeadline: React.FC<FadingHeadlineProps> = ({
       ))}
     </div>
   );
-};
+}
 
-export default FadingHeadline;
+export default AnimatedHeadline;
