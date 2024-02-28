@@ -5,8 +5,6 @@ import { archivo } from "./ui/common/fonts";
 import Footer from "./ui/common/footer";
 import getData from "./lib/get-data";
 import { companyInfoRequest } from "./data/company-info-request";
-import { NextUIProvider } from "@nextui-org/react";
-import { Button } from "@nextui-org/button";
 
 export const metadata: Metadata = {
   title: "NOR-BUD od 2021 r. Zmieniamy Polskę",
