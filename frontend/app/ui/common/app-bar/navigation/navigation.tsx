@@ -9,11 +9,11 @@ const navigation = {
     "max-md:my-4 p-3 flex flex-wrap items-center max-md:justify-center h-full gap-4 lg:gap-16 lg:px-4 lg:pl-12 lg:w-full text-sm tracking-wide lg:font-semibold leading-6 bg-green-700 text-stone-100 uppercase",
 };
 
-interface NavigationLinksProps {
+interface NavigationProps {
   handleThemeToggleClick: () => void;
 }
 
-function NavigationLinks({ handleThemeToggleClick }: NavigationLinksProps) {
+function Navigation({ handleThemeToggleClick }: NavigationProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -46,4 +46,4 @@ function NavigationLinks({ handleThemeToggleClick }: NavigationLinksProps) {
   );
 }
 
-export default NavigationLinks;
+export default Navigation;
