@@ -21,14 +21,11 @@ export default async function RootLayout({
 
   return (
     <html lang="pl">
-      {/* <NextUIProvider> */}
-        <body className={archivo.className}>
-          {/* <Button>Press me</Button> */}
-          <Hero heading={heroData.acf.aboutUsHeading} />
-          <main className="text-center">{children}</main>
-          <Footer />
-        </body>
-      {/* </NextUIProvider> */}
+      <body className={archivo.className}>
+        <Hero heading={heroData.acf.aboutUsHeading} />
+        <main className="text-center">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
