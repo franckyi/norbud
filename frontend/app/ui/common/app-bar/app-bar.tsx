@@ -12,7 +12,7 @@ interface AppBarProps {
 function AppBar({ toggleTheme }: AppBarProps) {
   return (
     <div className={appBarClasses}>
-      <Logo classes="max-md:mx-auto" />
+      <Logo classes="max-md:mx-auto" version="dark" />
       <Navigation toggleTheme={toggleTheme} />
     </div>
   );

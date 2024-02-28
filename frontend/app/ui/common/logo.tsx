@@ -1,15 +1,16 @@
 import Image from "next/image";
 
-const logo = {
-  src: "/logo.svg",
-  alt: "Norbud logo",
-};
-
 interface LogoProps {
   classes: string;
+  version: string;
 }
 
-function Logo({ classes }: LogoProps) {
+function Logo({ classes, version }: LogoProps) {
+  const logo = {
+    src: `/logo-${version}.svg`,
+    alt: "Norbud logo",
+  };
+
   return (
     <Image
       src={logo.src}

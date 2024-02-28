@@ -6,7 +6,7 @@ const footerText =
 function Footer() {
   return (
     <footer className="text-center p-16 mt-16 bg-green-700 text-white">
-      <Logo classes="mx-auto mb-8" />
+      <Logo classes="mx-auto mb-8" version="white" />
       <p>{footerText}</p>
     </footer>
   );
