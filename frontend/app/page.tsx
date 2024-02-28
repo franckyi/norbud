@@ -7,6 +7,13 @@ import Oferta from "./ui/home/oferta";
 import WriteUsButton from "./ui/common/write-us-button";
 import Image from "next/image";
 import { ServiceProps } from "./types/services-props";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "NOR-BUD od 2021 r. Zmieniamy Polskę",
+  description:
+    "BUD to firma, której początki sięgają 12 stycznia 2021 roku. Jesteśmy dumni, że w tak krótkim czasie udało nam się zdobyć zaufanie klientów i zyskać uznanie w branży budowlanej.",
+};
 
 async function Home() {
   let data = await getData(companyInfoRequest.URL);
