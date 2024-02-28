@@ -1,6 +1,6 @@
-export const revalidate = 86400; // revalidate every day
+export const revalidate = 86400; // revalidate every 24 h
 
-export default async function getData(URL: string) {
+async function getData(URL: string) {
   const res = await fetch(URL, {
     next: { revalidate: revalidate },
   });
@@ -11,3 +11,5 @@ export default async function getData(URL: string) {
 
   return res.json();
 }
+
+export default getData;
