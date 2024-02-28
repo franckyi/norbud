@@ -18,8 +18,8 @@ function NavigationLinks({ handleThemeToggleClick }: NavigationLinksProps) {
 
   return (
     <nav className={navigation.containerClasses} aria-label="Global">
-      {NAV_LINKS.map(({ href, label }, index) => (
-        <Link key={label} href={href}>
+      {NAV_LINKS.map(({ id, href, label }, index) => (
+        <Link key={id} href={href}>
           <div
             className="relative"
             onMouseEnter={() => setHoveredIndex(index)}
