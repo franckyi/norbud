@@ -9,10 +9,10 @@ const navigation = {
 };
 
 interface NavigationProps {
-  themeToggle: () => void;
+  toggleTheme: () => void;
 }
 
-function Navigation({ themeToggle }: NavigationProps) {
+function Navigation({ toggleTheme }: NavigationProps) {
   return (
     <nav className={navigation.containerClasses} aria-label="Global">
       {NAV_LINKS.map(({ id, href, label }, index) => (
@@ -20,7 +20,7 @@ function Navigation({ themeToggle }: NavigationProps) {
           <div className="relative z-10">{label}</div>
         </Link>
       ))}
-      <ThemeSwitcher themeToggle={themeToggle} />
+      <ThemeSwitcher toggleTheme={toggleTheme} />
       <WriteUsButton
         bg="bg-white"
         textColor="text-black"

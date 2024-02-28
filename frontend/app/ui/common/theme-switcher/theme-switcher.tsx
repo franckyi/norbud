@@ -4,13 +4,13 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { MaterialUISwitch } from "./material-ui-switch";
 
 interface ThemeSwitcherProps {
-  themeToggle: () => void;
+  toggleTheme: () => void;
 }
 
-function ThemeSwitcher({ themeToggle }: ThemeSwitcherProps) {
+function ThemeSwitcher({ toggleTheme }: ThemeSwitcherProps) {
   function handleClick() {
     console.log("clicked");
-    themeToggle();
+    toggleTheme();
   }
 
   return (
