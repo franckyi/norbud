@@ -1,4 +1,4 @@
-import AppBar from "./ui/common/app-bar";
+import AppBar from "./ui/common/app-bar/app-bar";
 import { archivo } from "./ui/common/fonts";
 
 export default function RootLayout({

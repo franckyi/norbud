@@ -3,7 +3,7 @@ import "./globals.css";
 import Hero from "./ui/common/hero";
 import { archivo } from "./ui/common/fonts";
 import Footer from "./ui/common/footer";
-import AppBar from "./ui/common/app-bar";
+import AppBar from "./ui/common/app-bar/app-bar";
 import { ReactNode, useState } from "react";
 import { createContext } from "react";
 
