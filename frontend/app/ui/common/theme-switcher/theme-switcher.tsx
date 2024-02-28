@@ -9,7 +9,6 @@ interface ThemeSwitcherProps {
 
 function ThemeSwitcher({ toggleTheme }: ThemeSwitcherProps) {
   function handleClick() {
-    console.log("clicked");
     toggleTheme();
   }
 
@@ -17,7 +16,7 @@ function ThemeSwitcher({ toggleTheme }: ThemeSwitcherProps) {
     <FormGroup>
       <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        label="test"
+        label=""
         className="m-0"
         onClick={handleClick}
       />

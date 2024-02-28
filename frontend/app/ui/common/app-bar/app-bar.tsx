@@ -3,7 +3,7 @@ import Logo from "../logo";
 import Navigation from "./navigation/navigation";
 
 const appBarClasses =
-  "absolute lg:flex lg:justify-center lg:gap-8 top-0 lg:top-8 z-50 lg:pt-8 lg:ml-80";
+  "absolute max-md:pt-16 lg:flex lg:justify-center lg:gap-8 top-0 lg:top-8 z-50 lg:pt-8 lg:ml-80";
 
 interface AppBarProps {
   toggleTheme: () => void;

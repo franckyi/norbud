@@ -1,7 +1,7 @@
 import Logo from "./logo";
 
 const footerText =
-  new Date().getFullYear() + "Norbud. Wszelkie prawa zastrzeżone.";
+  new Date().getFullYear() + " Norbud. Wszelkie prawa zastrzeżone.";
 
 function Footer() {
   return (
