@@ -27,7 +27,6 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
       <html lang="pl" className={`scroll-smooth ${theme}`}>
         <body className={`${archivo.className} ${bodyClasses}`}>
           <AppBar toggleTheme={toggleTheme} />
-          <p>{theme}</p>
           <Hero />
           <main className="text-center">{children}</main>
           <Footer />
