@@ -14,14 +14,14 @@ const regions = {
 function Numbers() {
   return (
     <div className="flex gap-4">
-      <p className={projects.classes}>
+      <div className={projects.classes}>
         <div className="text-6xl">{projects.count}</div>
         <span className="text-base font-light">{projects.label}</span>
-      </p>
-      <p className={regions.classes}>
+      </div>
+      <div className={regions.classes}>
         <div className="text-6xl">{regions.count}</div>
         <span className="text-base font-light">{regions.label}</span>
-      </p>
+      </div>
     </div>
   );
 }
