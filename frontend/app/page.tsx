@@ -40,7 +40,7 @@ async function Home() {
       <WriteUsButton
         bg="bg-green-700"
         textColor="text-white"
-        bgHover="hover:bg-stone-900 hover:text-white"
+        bgHover="hover:bg-stone-950 hover:text-white"
       />
     </>
   );
