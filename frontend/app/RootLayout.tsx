@@ -5,6 +5,7 @@ import { archivo } from "./ui/common/fonts";
 import Footer from "./ui/common/footer";
 import AppBar from "./ui/common/app-bar/app-bar";
 import { ReactNode, useState, createContext } from "react";
+import ContactSection from "./ui/contact/ContactSection";
 
 const bodyClasses =
   "bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-400";
@@ -29,6 +30,7 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
           <AppBar toggleTheme={toggleTheme} />
           <Hero />
           <main className="text-center">{children}</main>
+          <ContactSection />
           <Footer />
         </body>
       </html>

@@ -1,6 +1,6 @@
 import AboutUs from "./ui/home/about-us";
 import getData from "./lib/get-data";
-import { companyInfoRequest } from "./lib/company-info-request";
+import { homeContentRequest } from "./lib/home-content-request";
 import { ofertaRequest } from "./lib/oferta-request";
 import WhyUs from "./ui/home/why-us";
 import Oferta from "./ui/home/oferta";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 async function Home() {
-  let data = await getData(companyInfoRequest.URL);
+  let data = await getData(homeContentRequest.URL);
   data = data.acf;
   const services: ServiceProps[] = await getData(ofertaRequest.URL);
 
