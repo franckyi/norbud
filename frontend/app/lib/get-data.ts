@@ -1,8 +1,8 @@
-export const revalidate = 86400; // revalidate every 24 h
+export const TIME_INTERVAL = 86400; // revalidate every 24 h
 
 async function getData(URL: string) {
   const res = await fetch(URL, {
-    next: { revalidate: revalidate },
+    next: { revalidate: TIME_INTERVAL },
   });
 
   if (!res.ok) {
