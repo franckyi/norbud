@@ -1,14 +1,17 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
 
+const initialFormData = {
+  name: "",
+  phone: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -22,14 +25,37 @@ function ContactForm() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("Sending...");
     //form submission here
     console.log(formData);
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      console.log("Response received");
+      if (res.status === 200) {
+        console.log("Response succeeded!");
+        setSubmitted(true);
+        setFormData(initialFormData); //reset form
+        alert("Wiadomość została wysłana!");
+      }
+    });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col md:w-1/2">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col md:w-1/2"
+      method="POST"
+    >
       <input
         type="text"
+        id="name"
         name="name"
         placeholder="Imię / Nazwa firmy"
         value={formData.name}
@@ -39,6 +65,7 @@ function ContactForm() {
       />
       <input
         type="phone"
+        id="phone"
         name="phone"
         placeholder="Telefon"
         value={formData.phone}
@@ -48,6 +75,7 @@ function ContactForm() {
       />
       <input
         type="email"
+        id="email"
         name="email"
         placeholder="Email"
         value={formData.email}
@@ -57,6 +85,7 @@ function ContactForm() {
       />
       <input
         type="text"
+        id="subject"
         name="subject"
         placeholder="Temat"
         value={formData.subject}
@@ -65,6 +94,7 @@ function ContactForm() {
         required
       />
       <textarea
+        id="message"
         name="message"
         placeholder="Wiadomość"
         value={formData.message}
@@ -72,12 +102,10 @@ function ContactForm() {
         className="bg-gray-200 mb-4 py-2 px-4 rounded-sm h-32"
         required
       ></textarea>
-      <button
+      <input
         type="submit"
         className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800"
-      >
-        Wyślij
-      </button>
+      />
     </form>
   );
 }
