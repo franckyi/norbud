@@ -2,7 +2,7 @@ import { ServiceProps } from "@/app/types/services-props";
 
 const heading = {
   classes: "mt-16 mb-8 text-center text-2xl font-extrabold uppercase",
-  text: "Service",
+  text: "Usługi",
 };
 
 const numberClasses =
@@ -16,7 +16,7 @@ function oferta({ services }: { services: ServicesProps }) {
       <h2 className={heading.classes}>{heading.text}</h2>
       <section
         id="service"
-        className="lg:w-2/5 max-md:p-4 mx-auto my-16 text-center"
+        className="lg:w-2/5 xl:w-1/3 max-md:p-4 mx-auto my-16 text-center"
       >
         <div className="mx-auto flex flex-wrap gap-4 justify-center text-center">
           {services.map((service: ServiceProps) => (
