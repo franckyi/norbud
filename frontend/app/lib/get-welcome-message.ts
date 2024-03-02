@@ -1,8 +1,8 @@
-import { companyInfoRequest } from "./company-info-request";
+import { homeContentRequest } from "./home-content-request";
 import getData from "./get-data";
 
 async function getWelcomeMessage() {
-  const response = await getData(companyInfoRequest.URL);
+  const response = await getData(homeContentRequest.URL);
   return response.acf.aboutUsHeading;
 }
 
