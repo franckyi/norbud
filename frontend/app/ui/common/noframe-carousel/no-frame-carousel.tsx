@@ -1,33 +1,36 @@
 import "./noframecarousel.css";
-import { toolsBrands } from "./carousel-config";
+import { brandList } from "../../../data/brand-list";
 import CarouselItem from "./carousel-item";
 
 function NoFrameCarousel() {
   return (
     <div className="carousel-container">
+      carousel
       <div className="carousel-track">
-        {Object.keys(toolsBrands).map((key) => {
-          return (
-            <CarouselItem
-              key={toolsBrands[key].id}
-              imgUrl={toolsBrands[key].imgUrl}
-              imgTitle={toolsBrands[key].title}
-              imgWidth={toolsBrands[key].width}
-              imgHeight={toolsBrands[key].height}
-            ></CarouselItem>
-          );
-        })}
-        {Object.keys(toolsBrands).map((key) => {
-          return (
-            <CarouselItem
-              key={toolsBrands[key].id}
-              imgUrl={toolsBrands[key].imgUrl}
-              imgTitle={toolsBrands[key].title}
-              imgWidth={toolsBrands[key].width}
-              imgHeight={toolsBrands[key].height}
-            ></CarouselItem>
-          );
-        })}
+        {brandList.length > 0 &&
+          brandList.map((brand) => {
+            return (
+              <CarouselItem
+                key={brand.id}
+                imgSrc={brand.imgSrc}
+                imgTitle={brand.title}
+                imgWidth={brand.width}
+                imgHeight={brand.height}
+              ></CarouselItem>
+            );
+          })}
+        {brandList.length > 0 &&
+          brandList.map((brand) => {
+            return (
+              <CarouselItem
+                key={brand.id}
+                imgSrc={brand.imgSrc}
+                imgTitle={brand.title}
+                imgWidth={brand.width}
+                imgHeight={brand.height}
+              ></CarouselItem>
+            );
+          })}
       </div>
     </div>
   );
