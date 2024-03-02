@@ -5,7 +5,6 @@ function GoogleMap() {
       width="800"
       height="600"
       className="w-full"
-      loading="lazy"
       title="NOR-BUD na mapie Google"
     ></iframe>
   );
