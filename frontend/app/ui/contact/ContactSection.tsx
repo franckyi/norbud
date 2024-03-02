@@ -14,7 +14,7 @@ function ContactSection({ companyInfo }: ContactSectionProps) {
           <div className="hover:cursor-zoom-in">
             {companyInfo.street && companyInfo.cap && companyInfo.city && (
               <p className="hover:text-2xl">
-                S Adres:{" "}
+                Adres:{" "}
                 {`${companyInfo.street}, ${companyInfo.cap} ${companyInfo.city}`}
               </p>
             )}
