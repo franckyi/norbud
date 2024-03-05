@@ -1,5 +1,8 @@
+require("dotenv").config();
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+
+const PASSWORD = process.env.password;
 
 // To handle a GET request to /api
 // export async function GET(request) {
@@ -8,11 +11,11 @@ import nodemailer from "nodemailer";
 // }
 
 // To handle a POST request to /api
-export async function POST(request) {
+export async function POST(request, response) {
   // Do whatever you want
   // return NextResponse.json({ message: "Hello World" }, { status: 200 });
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: process.env.HOST,
     port: 465,
     secure: true,
     auth: {
@@ -20,6 +23,21 @@ export async function POST(request) {
       pass: process.env.PASSWORD,
     },
   });
+
+  const mailData = {
+    from: "formularz@nor-bud.com",
+    to: "contact@francky.works",
+    subject: `Wiadomość od ${request.body.name}`,
+    text: request.body.message,
+    html: `<div>${request.body.message}</div>`,
+  };
+
+  transporter.sendMail(mailData, function (err, info) {
+    if (err) console.log(err);
+    else console.log(info);
+  });
+
+  response.status(200);
 
   // return NextResponse.json({ email: request.body }, { status: 200 });
 }
