@@ -3,15 +3,20 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { CompanyInfo } from "@/app/types/company-info";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
+const heading = "Dane firmy";
+
 export interface ContactSectionProps {
   companyInfo: CompanyInfo;
 }
 
 function ContactSection({ companyInfo }: ContactSectionProps) {
   return (
-    <section id="contact-form" className="bg-gray-100 mt-16 py-24 px-4 md:px-0">
+    <section id="contact-form" className="mt-16 py-24 px-4 md:px-0">
       <div className="max-w-6xl mx-auto md:flex items-start">
-        <div className="md:w-1/2 mb-8 text-stone-800">
+        <div className="md:w-1/2 mb-8">
+          <h2 className="mb-4 text-2xl font-extrabold uppercase dark:text-stone-200">
+            {heading}
+          </h2>
           {companyInfo.fullName && (
             <p className="mb-4 text-lg">{companyInfo.fullName}</p>
           )}

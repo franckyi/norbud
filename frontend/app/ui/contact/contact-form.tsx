@@ -1,6 +1,8 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
 
+const heading = "Zleć projekt";
+
 const initialFormData = {
   name: "",
   phone: "",
@@ -48,65 +50,66 @@ function ContactForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col md:w-1/2"
-      method="POST"
-    >
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Imię / Nazwa firmy"
-        value={formData.name}
-        onChange={handleChange}
-        className="bg-gray-200 mb-4 py-2 px-4 rounded-sm"
-        required
-      />
-      <input
-        type="phone"
-        id="phone"
-        name="phone"
-        placeholder="Telefon"
-        value={formData.phone}
-        onChange={handleChange}
-        className="bg-gray-200 mb-4 py-2 px-4 rounded-sm"
-        required
-      />
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-        className="bg-gray-200 mb-4 py-2 px-4 rounded-sm"
-        required
-      />
-      <input
-        type="text"
-        id="subject"
-        name="subject"
-        placeholder="Temat"
-        value={formData.subject}
-        onChange={handleChange}
-        className="bg-gray-200 mb-4 py-2 px-4 rounded-sm"
-        required
-      />
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Wiadomość"
-        value={formData.message}
-        onChange={handleChange}
-        className="bg-gray-200 mb-4 py-2 px-4 rounded-sm h-32"
-        required
-      ></textarea>
-      <input
-        type="submit"
-        className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800"
-      />
-    </form>
+    <div className="md:w-1/2">
+      <h2 className="mb-4 text-2xl font-extrabold uppercase dark:text-stone-200">
+        {heading}
+      </h2>
+      <form onSubmit={handleSubmit} className="flex flex-col" method="POST">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Imię / Nazwa firmy"
+          value={formData.name}
+          onChange={handleChange}
+          className="bg-gray-200 mb-4 py-2 px-4 rounded-sm"
+          required
+        />
+        <input
+          type="phone"
+          id="phone"
+          name="phone"
+          placeholder="Telefon"
+          value={formData.phone}
+          onChange={handleChange}
+          className="bg-gray-200 mb-4 py-2 px-4 rounded-sm"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          className="bg-gray-200 mb-4 py-2 px-4 rounded-sm"
+          required
+        />
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Temat"
+          value={formData.subject}
+          onChange={handleChange}
+          className="bg-gray-200 mb-4 py-2 px-4 rounded-sm"
+          required
+        />
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Wiadomość"
+          value={formData.message}
+          onChange={handleChange}
+          className="bg-gray-200 mb-4 py-2 px-4 rounded-sm h-32"
+          required
+        ></textarea>
+        <input
+          type="submit"
+          className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800"
+        />
+      </form>
+    </div>
   );
 }
 
