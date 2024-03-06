@@ -1,16 +1,17 @@
-"use client";
+// "use client";
 import Chip from "@mui/material/Chip";
 
 const chipClasses = "mx-2 text-stone-800 dark:text-stone-500";
 
 interface CategoryFilterProps {
+  filters: string[];
   setFilters: (filters: string[]) => void;
 }
 
-function CategoryFilter({ setFilters }: CategoryFilterProps) {
-  function handleClick(e) {
-    console.log(e.target.id);
-    setFilters(["road", "sport"]);
+function CategoryFilter({ filters, setFilters }: CategoryFilterProps) {
+  function handleClick(e: any) {
+    console.log(e.target);
+    // setFilters(["road", "sport"]);
   }
 
   return (
