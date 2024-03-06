@@ -1,11 +1,15 @@
 import ContactForm from "./contact-form";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { ContactSectionProps } from "./contact-section";
+import { CompanyInfo } from "@/app/types/company-info";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
+
+export interface ContactSectionProps {
+  companyInfo: CompanyInfo;
+}
 
 function ContactSection({ companyInfo }: ContactSectionProps) {
   return (
-    <section className="bg-gray-100 mt-16 py-24 px-4 md:px-0">
+    <section id="contact-form" className="bg-gray-100 mt-16 py-24 px-4 md:px-0">
       <div className="max-w-6xl mx-auto md:flex items-start">
         <div className="md:w-1/2 mb-8 text-stone-800">
           {companyInfo.fullName && (
