@@ -7,7 +7,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   const transporter = nodemailer.createTransport({
     host: process.env.HOST,
-    port: 465,
     secure: true,
     auth: {
       user: process.env.EMAIL,
@@ -16,8 +15,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
   });
 
   const mailData = {
-    from: "formularz@nor-bud.com",
-    to: "contact@francky.works",
+    from: process.env.EMAIL,
+    to: process.env.RECIPIENT,
     subject: `Wiadomość od ${name} | ${email} | ${phone}`,
     html: `<h1>${subject}</h1><div>${message}</div>`,
   };
