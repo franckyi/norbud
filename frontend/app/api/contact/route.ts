@@ -6,12 +6,12 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const { subject, name, phone, email, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.zenbox.pl",
+    host: process.env.HOST,
     port: 465,
     secure: true,
     auth: {
       user: process.env.EMAIL,
-      pass: process.env.PASS
+      pass: process.env.PASS,
     },
   });
 
