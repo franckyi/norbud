@@ -36,8 +36,10 @@ function WorkItem({
         {/* start left col */}
         <div className={`${ColLeftClasses} ${bgClass}`} key={item.id}>
           {item.acf.galleryId && (
-            <div className="mb-4 text-sm text-stone-600">
-              #{item.acf.galleryId}
+            <div className="mb-4 text-sm text-stone-600 uppercase">
+              #{item.acf.galleryId} /{" "}
+              {(item.acf.category.sport && "obiekt sportowy") ||
+                (item.acf.category.road && "infrastruktura drogowa")}
             </div>
           )}
           {item.acf.investor && (

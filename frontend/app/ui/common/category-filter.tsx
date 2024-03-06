@@ -1,6 +1,9 @@
 // "use client";
 import Chip from "@mui/material/Chip";
+import { useState } from "react";
 
+const activeChipClasses =
+  "bg-green-700 text-white dark:bg-green-700 dark:text-white";
 const chipClasses = "mx-2 text-stone-800 dark:text-stone-500";
 
 interface CategoryFilterProps {
@@ -8,27 +11,39 @@ interface CategoryFilterProps {
   setFilters: (filters: string[]) => void;
 }
 
+enum Categories {
+  ROAD = "Infrastruktura drogowa",
+  SPORT = "Obiekty sportowe",
+}
+
 function CategoryFilter({ filters, setFilters }: CategoryFilterProps) {
+  const [isActiveChip, setIsActiveChip] = useState(false);
+
   function handleClick(e: any) {
-    console.log(e.target);
-    // setFilters(["road", "sport"]);
+    console.log(e.target.textContent);
+    const clickedFilter = e.target.textContent;
+
+    if (filters.includes(clickedFilter)) {
+      setFilters(filters.filter((filter) => filter !== clickedFilter));
+    } else {
+      setFilters([...filters, clickedFilter]);
+    }
   }
 
   return (
     <div className="mx-auto">
       <Chip
-        id="road"
-        label="Infrastruktura drogowa"
+        label={Categories.ROAD}
         onClick={handleClick}
         variant="outlined"
-        className={chipClasses}
+        className={chipClasses + isActiveChip ? activeChipClasses : ""}
+        // ref={clickedChip => clickedChip && setIsActiveChip(true)}
       />
       <Chip
-        id="sport"
-        label="Obiekty sportowe"
+        label={Categories.SPORT}
         onClick={handleClick}
         variant="outlined"
-        className={chipClasses}
+        className={chipClasses + isActiveChip ? activeChipClasses : ""}
       />
     </div>
   );
