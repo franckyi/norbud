@@ -1,45 +1,35 @@
-require("dotenv").config();
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+require("dotenv").config();
 
-const PASSWORD = process.env.password;
+export async function POST(req: NextRequest, res: NextResponse) {
+  const { subject, name, phone, email, message } = await req.json();
 
-// To handle a GET request to /api
-// export async function GET(request) {
-//   // Do whatever you want
-//   return NextResponse.json({ message: "Hello World" }, { status: 200 });
-// }
-
-// To handle a POST request to /api
-export async function POST(request, response) {
-  // Do whatever you want
-  // return NextResponse.json({ message: "Hello World" }, { status: 200 });
   const transporter = nodemailer.createTransport({
-    host: process.env.HOST,
+    host: "smtp.zenbox.pl",
     port: 465,
     secure: true,
     auth: {
       user: process.env.EMAIL,
-      pass: process.env.PASSWORD,
+      pass: process.env.PASS
     },
   });
 
   const mailData = {
     from: "formularz@nor-bud.com",
     to: "contact@francky.works",
-    subject: `Wiadomość od ${request.body.name}`,
-    text: request.body.message,
-    html: `<div>${request.body.message}</div>`,
+    subject: `Wiadomość od ${name} | ${email} | ${phone}`,
+    html: `<h1>${subject}</h1><div>${message}</div>`,
   };
 
-  transporter.sendMail(mailData, function (err, info) {
-    if (err) console.log(err);
-    else console.log(info);
-  });
-
-  response.status(200);
-
-  // return NextResponse.json({ email: request.body }, { status: 200 });
+  try {
+    await transporter.sendMail(mailData);
+    return NextResponse.json({ email: req.body }, { status: 200 });
+  } catch (error) {
+    console.error("W trakcie wysyłania email wystąpił błąd:", error);
+    return NextResponse.json(
+      { error: "Błąd wysyłania email" },
+      { status: 500 }
+    );
+  }
 }
-
-// Same logic to add a `PATCH`, `DELETE`...
