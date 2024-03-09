@@ -1,9 +1,9 @@
-import { WorkItem } from "../types/workItem";
+import { WorkItemI } from "../types/workItem";
 
-function filterCategories(data: WorkItem[], selectedCategory: string) {
+function filterCategories(data: WorkItemI[], selectedCategory: string) {
   return selectedCategory === "sport"
-    ? data.filter((item: WorkItem) => item.acf.category.sport)
-    : data.filter((item: WorkItem) => item.acf.category.road);
+    ? data.filter((item: WorkItemI) => item.acf.category.sport)
+    : data.filter((item: WorkItemI) => item.acf.category.road);
 }
 
 export default filterCategories;

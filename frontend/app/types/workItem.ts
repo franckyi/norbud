@@ -1,4 +1,4 @@
-export interface WorkItem {
+export interface WorkItemI {
   id: number;
   title: { rendered: string };
   acf: {

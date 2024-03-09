@@ -10,12 +10,12 @@ import getContentFromHtml from "../lib/get-content-from-html";
 import getFormattedDate from "../lib/get-formatted-date";
 import { PortfolioItemProps } from "../types/portfolio-item-props";
 import { useState } from "react";
-import { WorkItem } from "../types/workItem";
+import { WorkItemI } from "../types/workItem";
 
 const ColLeftClasses =
   "lg:w-2/4 p-8 text-left border border-1 border-solid border-stone-900 rounded";
 
-function WorkItem({ item, index }: { item: WorkItem; index: number }) {
+function WorkItem({ item, index }: { item: WorkItemI; index: number }) {
   const [isEven, setIsEven] = useState(index % 2 !== 0);
   const bgClass = isEven ? "bg-stone-800" : "bg-stone-300 dark:bg-stone-800";
 

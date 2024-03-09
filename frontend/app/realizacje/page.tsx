@@ -5,15 +5,15 @@ import { portfolioRequest } from "../lib/portfolio-request";
 import WorkList from "./work-list";
 import RadioFilters from "../ui/common/radio-filters";
 import filterCategories from "../lib/filter-categories";
-import { WorkItem } from "../types/workItem";
+import { WorkItemI } from "../types/workItem";
 
 const headingClasses = "mt-16 text-center text-2xl font-extrabold uppercase";
 
 function Portfolio() {
   const heading = "Nasze realizacje";
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [data, setData] = useState<WorkItem[]>([]);
-  const [filteredItems, setFilteredItems] = useState<WorkItem[]>([]);
+  const [data, setData] = useState<WorkItemI[]>([]);
+  const [filteredItems, setFilteredItems] = useState<WorkItemI[]>([]);
 
   function handleFilterClick() {
     if (selectedCategory === "all") {

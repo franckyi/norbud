@@ -1,5 +1,5 @@
-import { PortfolioItemProps } from "./portfolio-item-props";
+import { WorkItemI } from "./workItem";
 
 export type WorkListProps = {
-  portfolioItems: PortfolioItemProps[];
+  portfolioItems: WorkItemI[];
 };
