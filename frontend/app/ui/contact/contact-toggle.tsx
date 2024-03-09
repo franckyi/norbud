@@ -43,7 +43,7 @@ function ContactToggle({ companyInfo }: SectionProps) {
         </button>
         <button
           type="button"
-          className={`${contacts.btnClasses} bg-green-700`}
+          className={`${contacts.btnClasses} bg-green-700 hover:bg-green-600`}
           onClick={handleContactToggle}
         >
           Gdzie jesteśmy
