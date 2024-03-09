@@ -10,13 +10,13 @@ const numberClasses =
 
 type ServicesProps = ServiceProps[];
 
-function oferta({ services }: { services: ServicesProps }) {
+function OurServices({ services }: { services: ServicesProps }) {
   return (
     <>
       <h2 className={heading.classes}>{heading.text}</h2>
       <section
         id="service"
-        className="lg:w-2/5 xl:w-1/3 max-md:p-4 mx-auto my-16 text-center"
+        className="lg:w-2/5 max-md:p-4 mx-auto my-16 text-center"
       >
         <div className="mx-auto flex flex-wrap gap-4 justify-center text-center">
           {services.map((service: ServiceProps) => (
@@ -30,4 +30,4 @@ function oferta({ services }: { services: ServicesProps }) {
   );
 }
 
-export default oferta;
+export default OurServices;

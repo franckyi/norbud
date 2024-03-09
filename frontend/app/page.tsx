@@ -3,7 +3,7 @@ import getData from "./lib/get-data";
 import { homeContentRequest } from "./lib/home-content-request";
 import { ofertaRequest } from "./lib/oferta-request";
 import WhyUs from "./ui/home/why-us";
-import Oferta from "./ui/home/oferta";
+import OurServices from "./ui/home/our-services";
 import WriteUsButton from "./ui/common/write-us-button";
 import { ServiceProps } from "./types/services-props";
 import type { Metadata } from "next";
@@ -36,7 +36,7 @@ async function Home() {
         whyUsList={whyUsList}
         whyUsFinalText={data.whyUsFinalText}
       />
-      <Oferta services={services} />
+      <OurServices services={services} />
       <WriteUsButton
         bg="bg-green-700"
         textColor="text-white"
