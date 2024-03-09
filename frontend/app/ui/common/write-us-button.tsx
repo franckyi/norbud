@@ -6,7 +6,7 @@ const defaultClasses =
 function WriteUsButton({ bg, bgHover, textColor }: WriteUsButtonProps) {
   return (
     <Link
-      href="/#contact-form"
+      href="/#contact-section"
       className={`${defaultClasses} ${bg} ${bgHover} ${textColor}`}
     >
       Zleć projekt

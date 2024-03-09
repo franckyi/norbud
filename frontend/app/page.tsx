@@ -4,7 +4,6 @@ import { homeContentRequest } from "./lib/home-content-request";
 import { ofertaRequest } from "./lib/oferta-request";
 import WhyUs from "./ui/home/why-us";
 import OurServices from "./ui/home/our-services";
-import WriteUsButton from "./ui/common/write-us-button";
 import { ServiceProps } from "./types/services-props";
 import type { Metadata } from "next";
 import SampleWork from "./ui/home/sample-work";
@@ -37,11 +36,6 @@ async function Home() {
         whyUsFinalText={data.whyUsFinalText}
       />
       <OurServices services={services} />
-      <WriteUsButton
-        bg="bg-green-700"
-        textColor="text-white"
-        bgHover="hover:bg-stone-950 hover:text-white"
-      />
     </>
   );
 }

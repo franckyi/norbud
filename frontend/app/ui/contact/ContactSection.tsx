@@ -11,7 +11,7 @@ export interface ContactSectionProps {
 
 function ContactSection({ companyInfo }: ContactSectionProps) {
   return (
-    <section id="contact-form" className="py-24 px-4 md:px-0">
+    <section className="py-24 px-4 md:px-0">
       <div className="max-w-6xl mx-auto md:flex items-start">
         <div className="md:w-1/2 mb-8">
           <h2 className="mb-4 text-2xl font-extrabold uppercase dark:text-stone-200">
