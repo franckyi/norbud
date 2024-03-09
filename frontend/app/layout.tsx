@@ -11,6 +11,7 @@ import { companyInfoFallback } from "./data/company-info-fallback";
 import { CssVarsProvider } from "@mui/material-next/styles";
 import { customTheme } from "./ui/mui-custom-theme";
 import ContactToggle from "./ui/contact/contact-toggle";
+import { CompanyInfoResponse } from "./types/companyInfoResponse";
 
 const bodyClasses =
   "bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-400";
@@ -24,7 +25,7 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   useEffect(() => {
     getData(companyInfoRequest.URL).then((response) => {
       let data = response.filter(
-        (item: any) => item.title.rendered === "Główny Norbud"
+        (item: CompanyInfoResponse) => item.title.rendered === "Główny Norbud"
       );
       data = data[0].acf;
       setCompanyInfo(data);

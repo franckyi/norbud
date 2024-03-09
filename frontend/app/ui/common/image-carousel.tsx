@@ -6,6 +6,7 @@ import Image from "next/image";
 import getData from "../../lib/get-data";
 import { galleryRequest } from "../../lib/gallery-request";
 import { ImageCarouselProps } from "../../types/image-carousel-props";
+import { GalleryResponse } from "@/app/types/galleryResponse";
 
 function ImageCarousel({ galleryId }: ImageCarouselProps) {
   const [srcList, setSrcList] = useState<string[]>([]);
@@ -14,7 +15,7 @@ function ImageCarousel({ galleryId }: ImageCarouselProps) {
     const fetchGallery = async () => {
       const galleries = await getData(galleryRequest.URL);
       const gallery = galleries.find(
-        (item: any) => item.title.rendered === galleryId
+        (item: GalleryResponse) => item.title.rendered === galleryId
       );
 
       if (gallery) {
@@ -46,7 +47,7 @@ function ImageCarousel({ galleryId }: ImageCarouselProps) {
   );
 }
 
-function CarouselItem(props: any) {
+function CarouselItem(props: { src: string }) {
   return (
     <Paper>
       <Image src={props.src} alt="Norbud" width={800} height={450} />

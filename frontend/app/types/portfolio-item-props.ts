@@ -2,7 +2,7 @@ export interface PortfolioItemProps {
   id: number;
   title: { rendered: string };
   acf: {
-    category: any;
+    category: string;
     title: string;
     sorting: number;
     investor: string;

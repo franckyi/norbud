@@ -4,13 +4,14 @@ import Hero from "./ui/common/hero";
 import { archivo } from "./ui/common/fonts";
 import Footer from "./ui/common/footer";
 import AppBar from "./ui/common/app-bar/app-bar";
-import { ReactNode, useState, createContext, useEffect } from "react";
+import React, { ReactNode, useState, createContext, useEffect } from "react";
 import getData from "./lib/get-data";
 import { companyInfoRequest } from "./lib/company-info-request";
-import { CompanyInfo } from "./types/company-info";
-import ContactSection from "./ui/contact/ContactSection";
 import { companyInfoFallback } from "./data/company-info-fallback";
-import GoogleMap from "./ui/common/map";
+import { CssVarsProvider } from "@mui/material-next/styles";
+import { customTheme } from "./ui/mui-custom-theme";
+import ContactToggle from "./ui/contact/contact-toggle";
+import { CompanyInfoResponse } from "./types/companyInfoResponse";
 
 const bodyClasses =
   "bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-400";
@@ -24,7 +25,7 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   useEffect(() => {
     getData(companyInfoRequest.URL).then((response) => {
       let data = response.filter(
-        (item: any) => item.title.rendered === "Główny Norbud"
+        (item: CompanyInfoResponse) => item.title.rendered === "Główny Norbud"
       );
       data = data[0].acf;
       setCompanyInfo(data);
@@ -41,16 +42,17 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <html lang="pl" className={`scroll-smooth ${theme}`}>
-        <body className={`${archivo.className} ${bodyClasses}`}>
-          <AppBar toggleTheme={toggleTheme} />
-          <Hero />
-          <main className="text-center">{children}</main>
-          <ContactSection companyInfo={companyInfo} />
-          <GoogleMap />
-          <Footer companyInfo={companyInfo} />
-        </body>
-      </html>
+      <CssVarsProvider theme={customTheme}>
+        <html lang="pl" className={`scroll-smooth ${theme}`}>
+          <body className={`${archivo.className} ${bodyClasses}`}>
+            <AppBar toggleTheme={toggleTheme} />
+            <Hero />
+            <main className="text-center">{children}</main>
+            <ContactToggle companyInfo={companyInfo} />
+            <Footer companyInfo={companyInfo} />
+          </body>
+        </html>
+      </CssVarsProvider>
     </ThemeContext.Provider>
   );
 }

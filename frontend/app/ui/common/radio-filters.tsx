@@ -4,7 +4,11 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 
-function RadioFilters({ setSelectedCategory }: any) {
+interface RadioFiltersProps {
+  setSelectedCategory: (value: string) => void;
+}
+
+function RadioFilters({ setSelectedCategory }: RadioFiltersProps) {
   const [value, setValue] = useState("all");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
