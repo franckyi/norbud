@@ -2,31 +2,37 @@
 import { useEffect, useState } from "react";
 import getData from "../lib/get-data";
 import { portfolioRequest } from "../lib/portfolio-request";
-import CategoryFilter from "../ui/common/category-filter";
 import WorkList from "./work-list";
+import RadioFilters from "../ui/common/radio-filters";
+import filterCategories from "../lib/filter-categories";
+
+const headingClasses = "mt-16 text-center text-2xl font-extrabold uppercase";
 
 function Portfolio() {
   const heading = "Nasze realizacje";
-  const [filters, setFilters] = useState<string[]>([]);
-  const [portfolioItems, setPortfolioItems] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [data, setData] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  function handleFilterClick() {
+    selectedCategory === "all"
+      ? setFilteredItems(data)
+      : setFilteredItems(filterCategories(data, selectedCategory));
+  }
 
   useEffect(() => {
     getData(portfolioRequest.URL).then((response) => {
-      const filteredResponse = response.filter(
-        (item) => item.acf.category.road
-      );
-      setPortfolioItems(filteredResponse);
+      setData(response);
     });
   }, []);
 
+  useEffect(handleFilterClick, [data, selectedCategory]);
+
   return (
     <section id="realizacje" className="mx-auto text-center">
-      <h2 className="mt-16 text-center text-2xl font-extrabold uppercase">
-        {heading}
-      </h2>
-      <CategoryFilter filters={filters} setFilters={setFilters} />
-      active filters: {filters}
-      <WorkList portfolioItems={portfolioItems} />
+      <h2 className={headingClasses}>{heading}</h2>
+      <RadioFilters setSelectedCategory={setSelectedCategory} />
+      <WorkList portfolioItems={filteredItems} />
     </section>
   );
 }

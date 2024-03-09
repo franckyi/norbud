@@ -11,6 +11,8 @@ import { CompanyInfo } from "./types/company-info";
 import ContactSection from "./ui/contact/ContactSection";
 import { companyInfoFallback } from "./data/company-info-fallback";
 import GoogleMap from "./ui/common/map";
+import { CssVarsProvider } from "@mui/material-next/styles";
+import { customTheme } from "./ui/mui-custom-theme";
 
 const bodyClasses =
   "bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-400";
@@ -41,16 +43,18 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <html lang="pl" className={`scroll-smooth ${theme}`}>
-        <body className={`${archivo.className} ${bodyClasses}`}>
-          <AppBar toggleTheme={toggleTheme} />
-          <Hero />
-          <main className="text-center">{children}</main>
-          <ContactSection companyInfo={companyInfo} />
-          <GoogleMap />
-          <Footer companyInfo={companyInfo} />
-        </body>
-      </html>
+      <CssVarsProvider theme={customTheme}>
+        <html lang="pl" className={`scroll-smooth ${theme}`}>
+          <body className={`${archivo.className} ${bodyClasses}`}>
+            <AppBar toggleTheme={toggleTheme} />
+            <Hero />
+            <main className="text-center">{children}</main>
+            <ContactSection companyInfo={companyInfo} />
+            <GoogleMap />
+            <Footer companyInfo={companyInfo} />
+          </body>
+        </html>
+      </CssVarsProvider>
     </ThemeContext.Provider>
   );
 }
