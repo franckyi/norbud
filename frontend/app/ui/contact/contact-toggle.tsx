@@ -7,7 +7,7 @@ import GoogleMap from "../common/map";
 const contacts = {
   classes:
     "my-16 text-2xl font-extrabold text-center uppercase dark:text-stone-200",
-  heading: "Skontaktuj się znami",
+  heading: "Skontaktuj się z nami",
   btnClasses: "w-1/2 p-8 text-white hover:bg-green-800 uppercase",
 };
 
