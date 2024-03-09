@@ -28,7 +28,6 @@ function ContactForm() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Sending...");
-    //form submission here
     console.log(formData);
 
     fetch("/api/contact", {

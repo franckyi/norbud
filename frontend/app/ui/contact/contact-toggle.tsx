@@ -20,9 +20,7 @@ function ContactToggle({ companyInfo }: SectionProps) {
   const [isMapVisible, setIsMapVisible] = useState(false);
 
   function handleContactToggle(e: any) {
-    console.log(e.target);
     if (e.target.textContent === "Kontakty") {
-      console.log("clicked KONTAKTY");
       setIsFormVisible(true);
       setIsMapVisible(false);
     } else {
