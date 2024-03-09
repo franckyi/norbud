@@ -16,9 +16,11 @@ function Portfolio() {
   const [filteredItems, setFilteredItems] = useState<WorkItem[]>([]);
 
   function handleFilterClick() {
-    selectedCategory === "all"
-      ? setFilteredItems(data)
-      : setFilteredItems(filterCategories(data, selectedCategory));
+    if (selectedCategory === "all") {
+      setFilteredItems(data);
+    } else {
+      setFilteredItems(filterCategories(data, selectedCategory));
+    }
   }
 
   useEffect(() => {
