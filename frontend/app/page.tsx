@@ -7,6 +7,7 @@ import OurServices from "./ui/home/our-services";
 import { ServiceProps } from "./types/services-props";
 import type { Metadata } from "next";
 import SampleWork from "./ui/home/sample-work";
+import BrandsCarousel from "./ui/common/brandsCarousel.tsx/brandsCarousel";
 
 export const metadata: Metadata = {
   title: "NOR-BUD od 2021 r. Zmieniamy Polskę",
@@ -28,6 +29,7 @@ async function Home() {
 
   return (
     <>
+      <BrandsCarousel />
       <AboutUs aboutUsText={data.aboutUsText} />
       <SampleWork />
       <WhyUs

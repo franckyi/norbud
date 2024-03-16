@@ -5,6 +5,7 @@ export const brandList = [
     title: "Scania",
     width: 100,
     height: 60,
+    href: "https://www.scania.com/pl/pl/home/products/trucks.html",
   },
 
   {
@@ -13,6 +14,7 @@ export const brandList = [
     title: "Volvo",
     width: 100,
     height: 60,
+    href: "https://www.volvotrucks.pl/pl-pl/",
   },
 
   {
@@ -21,5 +23,14 @@ export const brandList = [
     title: "Komatsu",
     width: 100,
     height: 60,
+    href: "https://www.komatsu.jp/ja",
+  },
+  {
+    id: 3,
+    imgSrc: "kosztbhp.svg",
+    title: "kosztbhp",
+    width: 50,
+    height: 50,
+    href: "http://www.kosztbhp.pl/",
   },
 ];
