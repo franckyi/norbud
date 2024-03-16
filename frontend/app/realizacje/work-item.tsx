@@ -5,12 +5,12 @@ import {
   CurrencyEuroIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import ImageCarousel from "../ui/common/image-carousel";
-import getContentFromHtml from "../lib/get-content-from-html";
-import getFormattedDate from "../lib/get-formatted-date";
-import { PortfolioItemProps } from "../types/portfolio-item-props";
+import ImageCarousel from ".@/components/common/image-carousel";
+import getContentFromHtml from ".@/lib/get-content-from-html";
+import getFormattedDate from ".@/lib/get-formatted-date";
+import { PortfolioItemProps } from ".@/types/portfolio-item-props";
 import { useState } from "react";
-import { WorkItemI } from "../types/workItem";
+import { WorkItemI } from ".@/types/workItem";
 
 const ColLeftClasses =
   "lg:w-2/4 p-8 text-left border border-1 border-solid border-stone-900 rounded";

@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { responsive } from "./responsive";
 import CarouselItem from "./carousel-item";
-import { brandList } from "@/app/data/brand-list";
+import { brandList } from "@/data/brand-list";
 
 function BrandsCarousel() {
   return (

@@ -1,8 +1,8 @@
 "use client";
-import CheckisHome from "@/app/lib/check-is-home";
+import CheckisHome from "@/lib/check-is-home";
 import AnimatedHeadline from "../animated-headline/animated-headline";
 import Numbers from "../home/numbers";
-import getWelcomeMessage from "@/app/lib/get-welcome-message";
+import getWelcomeMessage from "@/lib/get-welcome-message";
 import { useContext, useEffect, useState } from "react";
 
 const heroBaseClasses =

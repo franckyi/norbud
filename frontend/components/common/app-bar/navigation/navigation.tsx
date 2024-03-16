@@ -1,4 +1,4 @@
-import { NAV_LINKS } from "@/app/data/nav-links";
+import { NAV_LINKS } from "@/data/nav-links";
 import Link from "next/link";
 import WriteUsButton from "../../write-us-button";
 import ThemeSwitcher from "../../theme-switcher/theme-switcher";

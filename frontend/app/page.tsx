@@ -1,13 +1,13 @@
-import AboutUs from "./ui/home/about-us";
-import getData from "./lib/get-data";
-import { homeContentRequest } from "./lib/home-content-request";
-import { ofertaRequest } from "./lib/oferta-request";
-import WhyUs from "./ui/home/why-us";
-import OurServices from "./ui/home/our-services";
-import { ServiceProps } from "./types/services-props";
+import AboutUs from "@/components/home/about-us";
+import getData from "@/lib/get-data";
+import { homeContentRequest } from "@/lib/home-content-request";
+import { ofertaRequest } from "@/lib/oferta-request";
+import WhyUs from "@/components/home/why-us";
+import OurServices from "@/components/home/our-services";
+import { ServiceProps } from "@/types/services-props";
 import type { Metadata } from "next";
-import SampleWork from "./ui/home/sample-work";
-import BrandsCarousel from "./ui/common/brandsCarousel.tsx/brandsCarousel";
+import SampleWork from "@/components/home/sample-work";
+import BrandsCarousel from "@/components/common/brandsCarousel.tsx/brandsCarousel";
 
 export const metadata: Metadata = {
   title: "NOR-BUD od 2021 r. Zmieniamy Polskę",

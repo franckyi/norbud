@@ -1,4 +1,4 @@
-import { CompanyInfo } from "../types/company-info";
+import { CompanyInfo } from ".@/types/company-info";
 
 export const companyInfoFallback: CompanyInfo = {
   name: "NOR-BUD",
