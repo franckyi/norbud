@@ -12,15 +12,17 @@ import { CssVarsProvider } from "@mui/material-next/styles";
 import { customTheme } from "./ui/mui-custom-theme";
 import ContactToggle from "./ui/contact/contact-toggle";
 import { CompanyInfoResponse } from "./types/companyInfoResponse";
+import { portfolioRequest } from "./lib/portfolio-request";
 
 const bodyClasses =
   "bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-400";
-
 const ThemeContext = createContext<null | string>(null);
 
 function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const [theme, setTheme] = useState("dark");
   const [companyInfo, setCompanyInfo] = useState(companyInfoFallback);
+  const [works, setWorks] = useState(null); // TODO: USE THIS TO GET DATA FOR HOME CAROUSELS
+  const [worksCount, setWorksCount] = useState(0);
 
   useEffect(() => {
     getData(companyInfoRequest.URL).then((response) => {
@@ -31,6 +33,13 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
       setCompanyInfo(data);
     });
   }, []);
+
+  useEffect(() => {
+    getData(portfolioRequest.URL).then((response) => {
+      setWorks(response);
+      setWorksCount(response.length);
+    });
+  });
 
   function toggleTheme() {
     if (theme === "dark") {
@@ -46,7 +55,7 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
         <html lang="pl" className={`scroll-smooth ${theme}`}>
           <body className={`${archivo.className} ${bodyClasses}`}>
             <AppBar toggleTheme={toggleTheme} />
-            <Hero />
+            <Hero worksCount={worksCount} />
             <main className="text-center">{children}</main>
             <ContactToggle companyInfo={companyInfo} />
             <Footer companyInfo={companyInfo} />
