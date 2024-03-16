@@ -53,7 +53,7 @@ function WorkItem({ item, index }: { item: WorkItemI; index: number }) {
             </div>
           )}
           {item.acf.investor && (
-            <div className="flex justify-between mb-4">
+            <div className="flex justify-between mb-4 gap-4">
               <h3 className="text-sm">
                 <CurrencyEuroIcon className="h-5 w-5 text-stone-500 inline mr-2" />
                 Inwestor:{" "}
@@ -63,7 +63,7 @@ function WorkItem({ item, index }: { item: WorkItemI; index: number }) {
           )}
 
           {item.acf.contractor && (
-            <div className="flex justify-between mb-4">
+            <div className="flex justify-between mb-4 gap-4">
               <h3 className="text-sm">
                 <UserCircleIcon className="h-5 w-5 text-stone-500 inline mr-2" />
                 Generalny wykonawca:{" "}
@@ -87,7 +87,7 @@ function WorkItem({ item, index }: { item: WorkItemI; index: number }) {
           )}
 
           {item.acf.taskList && (
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-col md:flex-row">
               <h3 className="text-sm basis-1/4">
                 <ClipboardDocumentListIcon className="h-5 w-5 text-stone-500 inline mr-2" />
                 Zakres prac:{" "}
