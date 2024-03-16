@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { CompanyInfo } from "@/app/types/company-info";
+import { CompanyInfo } from "@/types/company-info";
 import ContactSection from "./ContactSection";
 import GoogleMap from "../common/map";
 

@@ -1,6 +1,6 @@
 import ContactForm from "./contact-form";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { CompanyInfo } from "@/app/types/company-info";
+import { CompanyInfo } from "@/types/company-info";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
 const heading = "Dane firmy";

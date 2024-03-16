@@ -3,10 +3,14 @@ import { useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import Image from "next/image";
-import getData from "../.@/lib/get-data";
-import { galleryRequest } from "../.@/lib/gallery-request";
-import { ImageCarouselProps } from "../.@/types/image-carousel-props";
-import { GalleryResponse } from "@/app/types/galleryResponse";
+import getData from "@/lib/get-data";
+import { galleryRequest } from "@/lib/gallery-request";
+
+import { GalleryResponse } from "@/types/galleryResponse";
+
+type ImageCarouselProps = {
+  galleryId: string;
+};
 
 function ImageCarousel({ galleryId }: ImageCarouselProps) {
   const [srcList, setSrcList] = useState<string[]>([]);

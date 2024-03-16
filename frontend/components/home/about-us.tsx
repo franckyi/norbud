@@ -1,9 +1,11 @@
-import { AboutUsProps } from "@/app/types/about-us-props";
-
 const sectionClasses = "max-md:p-8 lg:w-1/3 mx-auto lg:my-16 text-center";
 const heading = {
   classes: "my-8 text-2xl font-extrabold uppercase dark:text-stone-200",
   text: "O Firmie",
+};
+
+type AboutUsProps = {
+  aboutUsText: string;
 };
 
 async function AboutUs({ aboutUsText }: AboutUsProps) {

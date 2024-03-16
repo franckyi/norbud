@@ -1,4 +1,4 @@
-import { WorkItemI } from ".@/types/workItem";
+import { WorkItemI } from "@/types/workItem";
 
 function filterCategories(data: WorkItemI[], selectedCategory: string) {
   return selectedCategory === "sport"

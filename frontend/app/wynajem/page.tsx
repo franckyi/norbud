@@ -1,6 +1,6 @@
-import getData from ".@/lib/get-data";
-import { wynajemRequest } from ".@/lib/rent-request";
-import { RentItemProps } from ".@/types/rent-item-props";
+import getData from "@/lib/get-data";
+import { wynajemRequest } from "@/lib/rent-request";
+import { RentItemProps } from "@/types/rent-item-props";
 import RentItem from "./rent-item";
 
 async function Rent() {

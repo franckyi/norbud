@@ -1,4 +1,4 @@
-import { ServiceProps } from "@/app/types/services-props";
+import { ServiceProps } from "@/types/services-props";
 
 const heading = {
   classes: "mt-16 mb-8 text-center text-2xl font-extrabold uppercase",

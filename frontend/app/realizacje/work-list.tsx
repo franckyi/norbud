@@ -1,6 +1,6 @@
-import { PortfolioItemProps } from ".@/types/portfolio-item-props";
-import { WorkListProps } from ".@/types/work-list-props";
-import { WorkItemI } from ".@/types/workItem";
+import { PortfolioItemProps } from "@/types/portfolio-item-props";
+import { WorkListProps } from "@/types/work-list-props";
+import { WorkItemI } from "@/types/workItem";
 import WorkItem from "./work-item";
 
 function WorkList({ portfolioItems }: WorkListProps) {

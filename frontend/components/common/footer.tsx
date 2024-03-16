@@ -1,4 +1,4 @@
-import { CompanyInfo } from "@/app/types/company-info";
+import { CompanyInfo } from "@/types/company-info";
 import Logo from "./logo";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import FacebookIcon from "@mui/icons-material/Facebook";

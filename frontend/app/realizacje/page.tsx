@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import getData from ".@/lib/get-data";
-import { portfolioRequest } from ".@/lib/portfolio-request";
+import getData from "@/lib/get-data";
+import { portfolioRequest } from "@/lib/portfolio-request";
 import WorkList from "./work-list";
-import RadioFilters from ".@/components/common/radio-filters";
-import filterCategories from ".@/lib/filter-categories";
-import { WorkItemI } from ".@/types/workItem";
+import RadioFilters from "@/components/common/radio-filters";
+import filterCategories from "@/lib/filter-categories";
+import { WorkItemI } from "@/types/workItem";
 
 const headingClasses = "mt-16 text-center text-2xl font-extrabold uppercase";
 

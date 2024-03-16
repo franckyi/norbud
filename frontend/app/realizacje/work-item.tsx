@@ -5,15 +5,30 @@ import {
   CurrencyEuroIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import ImageCarousel from ".@/components/common/image-carousel";
-import getContentFromHtml from ".@/lib/get-content-from-html";
-import getFormattedDate from ".@/lib/get-formatted-date";
-import { PortfolioItemProps } from ".@/types/portfolio-item-props";
+import ImageCarousel from "@/components/common/image-carousel";
+import getContentFromHtml from "@/lib/get-content-from-html";
+import getFormattedDate from "@/lib/get-formatted-date";
 import { useState } from "react";
-import { WorkItemI } from ".@/types/workItem";
+import { WorkItemI } from "@/types/workItem";
 
 const ColLeftClasses =
   "lg:w-2/4 p-8 text-left border border-1 border-solid border-stone-900 rounded";
+
+interface PortfolioItemProps {
+  id: number;
+  title: { rendered: string };
+  acf: {
+    category: string;
+    title: string;
+    sorting: number;
+    investor: string;
+    contractor: string;
+    dateStart: string;
+    dateEnd: string;
+    taskList: string;
+    galleryId: string;
+  };
+}
 
 function WorkItem({ item, index }: { item: WorkItemI; index: number }) {
   const [isEven, setIsEven] = useState(index % 2 !== 0);
