@@ -1,5 +1,4 @@
 const projects = {
-  count: "10+",
   label: "Realizacje",
   classes:
     "w-36 h-36 p-12 flex flex-col justify-between items-center bg-green-700",
@@ -11,11 +10,15 @@ const regions = {
     "w-36 h-36 p-12 flex flex-col justify-between items-center bg-green-700",
 };
 
-function Numbers() {
+type NumbersProps = {
+  worksCount: number;
+};
+
+function Numbers({ worksCount }: NumbersProps) {
   return (
     <div className="flex gap-4">
       <div className={projects.classes}>
-        <div className="text-6xl">{projects.count}</div>
+        <div className="text-6xl">{worksCount}</div>
         <span className="text-base font-light">{projects.label}</span>
       </div>
       <div className={regions.classes}>

@@ -3,12 +3,15 @@ import CheckisHome from "@/app/lib/check-is-home";
 import AnimatedHeadline from "../animated-headline/animated-headline";
 import Numbers from "../home/numbers";
 import getWelcomeMessage from "@/app/lib/get-welcome-message";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const heroBaseClasses =
   "flex items-end pb-16 max-md:p-8 max-md:py-16 bg-no-repeat";
+type HeroProps = {
+  worksCount: number;
+};
 
-function Hero() {
+function Hero({ worksCount }: HeroProps) {
   const [heading, setHeading] = useState("");
 
   useEffect(() => {
@@ -26,7 +29,7 @@ function Hero() {
         <div className="lg:ml-80 text-white">
           <p className="text-xl italic">{heading}</p>
           <AnimatedHeadline />
-          <Numbers />
+          <Numbers worksCount={worksCount} />
         </div>
       )}
     </header>
