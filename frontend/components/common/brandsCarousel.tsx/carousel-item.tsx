@@ -11,6 +11,7 @@ function CarouselLink({ href, children }: CarouselLinkProps) {
     <a
       href={href ?? "#"}
       className="inline-block p-8 h-36 flex justify-center items-center bg-green-700"
+      draggable="false"
     >
       {children}
     </a>
