@@ -21,7 +21,7 @@ const ThemeContext = createContext<null | string>(null);
 function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const [theme, setTheme] = useState("dark");
   const [companyInfo, setCompanyInfo] = useState(companyInfoFallback);
-  const [works, setWorks] = useState(null); // TODO: USE THIS TO GET DATA FOR HOME CAROUSELS
+  const [works, setWorks] = useState([]);
   const [worksCount, setWorksCount] = useState(0);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
       setWorks(response);
       setWorksCount(response.length);
     });
-  });
+  }, []);
 
   function toggleTheme() {
     if (theme === "dark") {

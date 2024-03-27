@@ -5,10 +5,10 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 
 interface RadioFiltersProps {
-  setSelectedCategory: (value: string) => void;
+  setCategory: (value: string) => void;
 }
 
-function RadioFilters({ setSelectedCategory }: RadioFiltersProps) {
+function RadioFilters({ setCategory }: RadioFiltersProps) {
   const [value, setValue] = useState("all");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -16,8 +16,8 @@ function RadioFilters({ setSelectedCategory }: RadioFiltersProps) {
   };
 
   useEffect(() => {
-    setSelectedCategory(value);
-  }, [value, setSelectedCategory]);
+    setCategory(value);
+  }, [value, setCategory]);
 
   return (
     <FormControl className="mt-8">

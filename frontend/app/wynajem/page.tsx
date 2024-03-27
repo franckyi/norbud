@@ -4,9 +4,9 @@ import { RentItemProps } from "@/types/rent-item-props";
 import RentItem from "./rent-item";
 
 async function Rent() {
+  const heading = "Wynajem maszyn oraz usługi";
   const data = await getData(wynajemRequest.URL);
   const rentItems = data;
-  const heading = "Wynajem maszyn oraz usługi";
 
   return (
     <section id="wynajem" className="p-8 lg:px-24 mx-auto text-center">

@@ -11,30 +11,30 @@ const headingClasses = "mt-16 text-center text-2xl font-extrabold uppercase";
 
 function Portfolio() {
   const heading = "Nasze realizacje";
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [data, setData] = useState<WorkItemI[]>([]);
+  const [selectedCategory, setCategory] = useState<string>("all");
+  const [works, setWorks] = useState<WorkItemI[]>([]);
   const [filteredItems, setFilteredItems] = useState<WorkItemI[]>([]);
 
   function handleFilterClick() {
     if (selectedCategory === "all") {
-      setFilteredItems(data);
+      setFilteredItems(works);
     } else {
-      setFilteredItems(filterCategories(data, selectedCategory));
+      setFilteredItems(filterCategories(works, selectedCategory));
     }
   }
 
   useEffect(() => {
     getData(portfolioRequest.URL).then((response) => {
-      setData(response);
+      setWorks(response);
     });
   }, []);
 
-  useEffect(handleFilterClick, [data, selectedCategory]);
+  useEffect(handleFilterClick, [works, selectedCategory]);
 
   return (
     <section id="realizacje" className="mx-auto text-center">
       <h2 className={headingClasses}>{heading}</h2>
-      <RadioFilters setSelectedCategory={setSelectedCategory} />
+      <RadioFilters setCategory={setCategory} />
       <WorkList portfolioItems={filteredItems} />
     </section>
   );

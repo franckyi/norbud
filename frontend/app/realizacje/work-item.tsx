@@ -47,7 +47,8 @@ function WorkItem({ item, index }: { item: WorkItemI; index: number }) {
         <div className={`${ColLeftClasses} ${bgClass}`} key={item.id}>
           {item.acf.galleryId && (
             <div className="mb-4 text-sm text-stone-600 uppercase">
-              #{item.acf.galleryId} /{" "}
+              {/* USEFUL ID TO HANDLE GALLERIES: TEMPORARY TURNED OFF BY CLIENT */}
+              {/* #{item.acf.galleryId} /{" "} */}
               {(item.acf.category.sport && "obiekt sportowy") ||
                 (item.acf.category.road && "infrastruktura drogowa")}
             </div>
