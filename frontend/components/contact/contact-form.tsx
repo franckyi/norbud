@@ -1,7 +1,6 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
-
-const heading = "Zleć projekt";
+import { usePathname } from "next/navigation";
 
 const initialFormData = {
   name: "",
@@ -11,9 +10,11 @@ const initialFormData = {
   message: "",
 };
 
-function ContactForm() {
+export default function ContactForm() {
   const [formData, setFormData] = useState(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const path = usePathname();
+  const heading = path === "/kariera" ? "Aplikuj" : "Zleć projekt";
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -111,5 +112,3 @@ function ContactForm() {
     </div>
   );
 }
-
-export default ContactForm;
