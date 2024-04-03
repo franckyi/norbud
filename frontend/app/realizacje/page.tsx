@@ -25,6 +25,7 @@ function Portfolio() {
 
   useEffect(() => {
     getData(portfolioRequest.URL).then((response) => {
+      response.sort((a: any, b: any) => a.acf.sorting - b.acf.sorting);
       setWorks(response);
     });
   }, []);
