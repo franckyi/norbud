@@ -4,7 +4,7 @@ export const brandList = [
     imgSrc: "scania.svg",
     title: "Scania",
     width: 100,
-    height: 60,
+    height: 80,
     href: "https://www.scania.com/pl/pl/home/products/trucks.html",
   },
 
@@ -13,7 +13,7 @@ export const brandList = [
     imgSrc: "volvo.svg",
     title: "Volvo",
     width: 100,
-    height: 60,
+    height: 80,
     href: "https://www.volvotrucks.pl/pl-pl/",
   },
 
@@ -22,15 +22,15 @@ export const brandList = [
     imgSrc: "komatsu.svg",
     title: "Komatsu",
     width: 100,
-    height: 60,
+    height: 80,
     href: "https://www.komatsu.jp/ja",
   },
   {
     id: 3,
     imgSrc: "kosztbhp.svg",
     title: "kosztbhp",
-    width: 50,
-    height: 50,
+    width: 90,
+    height: 90,
     href: "http://www.kosztbhp.pl/",
   },
 ];
