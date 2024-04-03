@@ -5,6 +5,7 @@ export interface WorkItemI {
     category: {
       sport: boolean;
       road: boolean;
+      demolition: boolean;
     };
     title: string;
     sorting: number;

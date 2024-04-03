@@ -44,6 +44,11 @@ function RadioFilters({ setCategory }: RadioFiltersProps) {
           control={<Radio className="text-green-700" color="success" />}
           label="Obiekty sportowe"
         />
+        <FormControlLabel
+          value="demolition"
+          control={<Radio className="text-green-700" color="success" />}
+          label="Rozbiórki i Wyburzenia"
+        />
       </RadioGroup>
     </FormControl>
   );
