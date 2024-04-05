@@ -108,6 +108,9 @@ export default function ContactForm() {
           type="submit"
           className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800"
         />
+        <p className="my-4 text-xs">
+          * Klikając przycisk wyślij akceptujesz regulamin.
+        </p>
       </form>
     </div>
   );
