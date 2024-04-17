@@ -109,7 +109,7 @@ export default function ContactForm() {
         ></textarea>
         <input
           type="submit"
-          className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800"
+          className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800 hover:cursor-pointer"
         />
         <p className="my-4 text-xs">
           * Klikając przycisk wyślij akceptujesz regulamin. <RegulaminDialog />
