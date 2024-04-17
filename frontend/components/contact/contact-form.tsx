@@ -47,7 +47,6 @@ export default function ContactForm() {
         setSubmitted(true);
         setFormData(initialFormData); //reset form
         // alert("Wiadomość została wysłana!");
-        return <Alert severity="success">Wiadomość została wysłana</Alert>;
       }
     });
   };
@@ -104,7 +103,7 @@ export default function ContactForm() {
           placeholder="Wiadomość"
           value={formData.message}
           onChange={handleChange}
-          className="bg-gray-200 mb-4 py-2 px-4 rounded-sm h-32"
+          className="mb-4 py-2 px-4 rounded-sm h-32 text-stone-700 bg-gray-200"
           required
         ></textarea>
         <input
@@ -112,9 +111,14 @@ export default function ContactForm() {
           className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800 hover:cursor-pointer"
         />
         <p className="my-4 text-xs">
-          * Klikając przycisk wyślij akceptujesz regulamin. <RegulaminDialog />
+          * Klikając przycisk wyślij akceptujesz regulamin.
+          <br />
+          <br />
+          <RegulaminDialog />
         </p>
       </form>
+
+      {submitted && <Alert severity="success">Wiadomość została wysłana</Alert>}
     </div>
   );
 }
