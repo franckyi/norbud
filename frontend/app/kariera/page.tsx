@@ -25,7 +25,7 @@ export default function Career() {
   return isLoading ? (
     <p className="my-16 text-3xl">Ładuję oferty pracy...</p>
   ) : !isLoading && jobOffers.length < 1 ? (
-    <p className="my-16 text-3xl">Na tą chwilę nie mamy otwarte pozycje.</p>
+    <NoResultsMessage />
   ) : (
     <JobList jobs={jobOffers} />
   );

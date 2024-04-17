@@ -1,6 +1,8 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { usePathname } from "next/navigation";
+import Alert from "@mui/material/Alert";
+import RegulaminDialog from "../RegulaminDialog/RegulaminDialog";
 
 const initialFormData = {
   name: "",
@@ -44,7 +46,8 @@ export default function ContactForm() {
         console.log("Response succeeded!");
         setSubmitted(true);
         setFormData(initialFormData); //reset form
-        alert("Wiadomość została wysłana!");
+        // alert("Wiadomość została wysłana!");
+        return <Alert severity="success">Wiadomość została wysłana</Alert>;
       }
     });
   };
@@ -109,7 +112,7 @@ export default function ContactForm() {
           className="bg-green-700 text-white py-2 px-4 rounded-sm hover:bg-green-800"
         />
         <p className="my-4 text-xs">
-          * Klikając przycisk wyślij akceptujesz regulamin.
+          * Klikając przycisk wyślij akceptujesz regulamin. <RegulaminDialog />
         </p>
       </form>
     </div>
